@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Joyce Corse · Guia de Gravação</title>
+<meta name="description" content="Guia de gravação de topo a fundo de funil para o ateliê Joyce Corse Moda Festa.">
+<link rel="icon" href="img/avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16130f; --ink2:#1e1a16; --ink3:#2a241e;
+  --cream:#f8f3ec; --cream2:#efe6d9; --paper:#fbf8f3;
+  --gold:#b8935a; --gold2:#d9bd8c; --goldd:#8a6a3b;
+  --text:#2b2520; --mute:#7a6f63; --line:rgba(184,147,90,.28);
+  --serif:'Cormorant Garamond',Georgia,serif; --sans:'Poppins',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --gut:clamp(16px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{background:var(--paper);color:var(--text);font-family:var(--sans);font-weight:300;font-size:15px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased;font-variant-numeric:lining-nums;font-feature-settings:'lnum' 1}
+img,video{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+a{color:inherit}
+::selection{background:var(--gold);color:#fff}
+
+/* grain */
+body::after{content:"";position:fixed;inset:-50%;z-index:9998;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+
+/* preloader */
+#pre{position:fixed;inset:0;z-index:10000;background:var(--ink);display:grid;place-items:center;color:var(--cream)}
+#pre .pw{text-align:center;overflow:hidden}
+#pre .pn{font-family:var(--serif);font-weight:300;font-size:clamp(34px,7vw,72px);letter-spacing:.32em;padding-left:.32em;display:flex;justify-content:center}
+#pre .pn span{display:inline-block;transform:translateY(110%)}
+#pre .ps{margin-top:14px;font-size:10px;letter-spacing:.6em;color:var(--gold2);opacity:0}
+#pre .pl{height:1px;background:var(--gold);width:0;margin:22px auto 0}
+
+/* cursor */
+.cur{position:fixed;left:0;top:0;z-index:9999;pointer-events:none;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--gold);mix-blend-mode:normal;transition:width .4s var(--ease),height .4s var(--ease),margin .4s var(--ease),background .4s}
+.cur.big{width:74px;height:74px;margin:-37px 0 0 -37px;background:rgba(184,147,90,.9)}
+.cur i{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-size:10px;letter-spacing:.25em;color:#fff;opacity:0;transition:opacity .3s}
+.cur.big i{opacity:1}
+@media (hover:none),(max-width:900px){.cur{display:none}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:560px;overflow:hidden;background:var(--ink);color:var(--cream)}
+.hero video,.hero .hp{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.15)}
+.hero .hp{z-index:0}
+.hero video{z-index:1}
+.hero::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(22,19,15,.55) 0%,rgba(22,19,15,.15) 35%,rgba(22,19,15,.25) 60%,rgba(22,19,15,.92) 100%)}
+.hero .frame{position:absolute;inset:clamp(14px,2.4vw,30px);z-index:3;border:1px solid rgba(217,189,140,.35);pointer-events:none}
+.hero .top{position:absolute;z-index:4;top:clamp(28px,4vw,52px);left:var(--gut);right:var(--gut);display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:.5em;color:var(--gold2)}
+.hero .top img{width:38px;height:38px;border-radius:50%;border:1px solid rgba(217,189,140,.6)}
+.hero .top .brand{display:flex;align-items:center;gap:14px}
+.hero .content{position:absolute;z-index:4;left:var(--gut);right:var(--gut);bottom:clamp(54px,9vh,110px)}
+.eyebrow{font-size:10.5px;letter-spacing:.5em;text-transform:uppercase;color:var(--gold);font-weight:500}
+.hero .eyebrow{color:var(--gold2)}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(46px,9.5vw,148px);line-height:.92;letter-spacing:-.01em;margin:18px 0 0}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.06em}
+.hero h1 .ln>span{display:block;transform:translateY(105%)}
+.hero h1 em{font-style:italic;color:var(--gold2)}
+.hero .sub{display:flex;gap:32px;justify-content:space-between;align-items:flex-end;margin-top:28px;flex-wrap:wrap}
+.hero .sub p{max-width:440px;color:rgba(248,243,236,.78);font-size:14px}
+.scroll-ind{display:flex;align-items:center;gap:14px;font-size:10px;letter-spacing:.45em;color:var(--gold2)}
+.scroll-ind span{width:1px;height:46px;background:rgba(217,189,140,.3);position:relative;overflow:hidden}
+.scroll-ind span::after{content:"";position:absolute;left:0;top:-50%;width:1px;height:50%;background:var(--gold2);animation:drip 2s var(--ease) infinite}
+@keyframes drip{to{top:110%}}
+
+/* tabs */
+.tabs{position:sticky;top:0;z-index:50;background:rgba(22,19,15,.86);backdrop-filter:blur(18px) saturate(1.3);-webkit-backdrop-filter:blur(18px) saturate(1.3);border-bottom:1px solid rgba(184,147,90,.22)}
+.tabs .in{display:flex;align-items:center;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 var(--gut);position:relative}
+.tabs .in::-webkit-scrollbar{display:none}
+.tab{flex:none;padding:20px 14px 18px;color:rgba(248,243,236,.55);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;transition:color .5s var(--ease);position:relative}
+.tab b{font-family:var(--serif);font-weight:400;font-size:15px;letter-spacing:0;color:var(--gold);margin-right:7px;font-style:italic}
+.tab:hover{color:var(--cream)}
+.tab.on{color:var(--cream)}
+.tabs .ind{position:absolute;bottom:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));transition:left .7s var(--ease),width .7s var(--ease);left:0;width:0}
+.tabs .prog{position:absolute;left:0;bottom:-1px;height:1px;background:var(--gold2);opacity:.5;width:0}
+
+/* panels */
+main{position:relative;min-height:100vh}
+.panel{display:none}
+.panel.on{display:block}
+.wrap{padding:0 var(--gut);max-width:1360px;margin:0 auto}
+
+/* chapter header */
+.ch{position:relative;overflow:hidden;background:var(--ink);color:var(--cream);min-height:min(78vh,720px);display:flex;align-items:flex-end}
+.ch .bg{position:absolute;inset:-12% 0;background-size:cover;background-position:center 30%;will-change:transform}
+.ch::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,19,15,.94) 0%,rgba(22,19,15,.7) 45%,rgba(22,19,15,.15) 100%),linear-gradient(0deg,rgba(22,19,15,.6),transparent 40%)}
+.ch .wrap{position:relative;z-index:2;width:100%;padding-top:110px;padding-bottom:clamp(48px,8vh,90px)}
+.ch .num{font-family:var(--serif);font-weight:300;font-size:clamp(90px,16vw,220px);line-height:.8;color:transparent;-webkit-text-stroke:1px rgba(217,189,140,.55);display:block;margin-bottom:6px}
+.ch h2{font-family:var(--serif);font-weight:300;font-size:clamp(40px,6.4vw,92px);line-height:1;margin:14px 0 22px}
+.ch h2 em{font-style:italic;color:var(--gold2)}
+.ch p.lead{max-width:600px;color:rgba(248,243,236,.78);font-size:15px}
+.ch .tag{display:inline-block;margin-top:28px;border:1px solid rgba(217,189,140,.5);padding:10px 18px;font-size:10px;letter-spacing:.38em;color:var(--gold2);text-transform:uppercase}
+
+.sec{padding:clamp(64px,10vw,130px) 0}
+.sec.alt{background:var(--cream)}
+.sec.dark{background:var(--ink);color:var(--cream)}
+.h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,52px);line-height:1.05;margin:12px 0 22px}
+.h3 em{font-style:italic;color:var(--goldd)}
+.dark .h3 em{color:var(--gold2)}
+.intro{max-width:720px;font-size:16px;color:var(--mute)}
+.dark .intro{color:rgba(248,243,236,.7)}
+.rule{height:1px;background:var(--line);margin:28px 0;transform-origin:left}
+
+/* funnel visual */
+.funnel{display:grid;gap:14px;margin-top:56px}
+.fstage{display:grid;grid-template-columns:minmax(150px,240px) 1fr;gap:clamp(20px,4vw,60px);align-items:stretch;border-top:1px solid var(--line);padding:30px 0}
+.fstage .fn{font-family:var(--serif);font-size:clamp(44px,6vw,80px);font-weight:300;line-height:.9}
+.fstage .fn small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.4em;color:var(--gold);margin-top:12px;text-transform:uppercase;font-weight:500}
+.fgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.fgrid div h6{font-size:9.5px;letter-spacing:.32em;color:var(--gold);font-weight:500;text-transform:uppercase;margin-bottom:8px}
+.fgrid div p{font-size:14px}
+.bar{height:6px;background:var(--cream2);margin-top:22px;position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;background:linear-gradient(90deg,var(--goldd),var(--gold2));width:0}
+
+.callouts{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:60px}
+.call{background:var(--paper);border:1px solid var(--line);padding:clamp(26px,3vw,40px);position:relative}
+.sec.alt .call{background:var(--paper)}
+.sec:not(.alt):not(.dark) .call{background:var(--cream)}
+.call::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--gold)}
+.call h4{font-family:var(--serif);font-weight:500;font-size:24px;margin-bottom:10px}
+.call p,.call li{font-size:14.5px}
+.call ul{list-style:none;display:grid;gap:8px}
+.call li{padding-left:20px;position:relative}
+.call li::before{content:"";position:absolute;left:0;top:.75em;width:9px;height:1px;background:var(--gold)}
+.big3{display:flex;gap:clamp(18px,4vw,60px);margin:22px 0 4px;flex-wrap:wrap}
+.big3 div{font-family:var(--serif);font-size:clamp(48px,6vw,78px);line-height:1;font-weight:300}
+.big3 div small{display:block;font-family:var(--sans);font-size:10px;letter-spacing:.35em;color:var(--gold);text-transform:uppercase;font-weight:500;margin-top:8px}
+
+.princ{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(217,189,140,.18);margin-top:50px;border:1px solid rgba(217,189,140,.18)}
+.princ div{background:var(--ink);padding:34px 28px}
+.princ b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:44px;color:var(--gold);display:block;line-height:1;margin-bottom:18px}
+.princ h5{font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:10px}
+.princ p{font-size:13.5px;color:rgba(248,243,236,.68)}
+
+/* marquee */
+.marq{overflow:hidden;padding:clamp(40px,6vw,80px) 0;background:var(--ink)}
+.marq .track{display:flex;gap:16px;width:max-content;animation:mq 60s linear infinite}
+.marq:hover .track{animation-play-state:paused}
+.marq figure{width:clamp(200px,22vw,300px);aspect-ratio:3/4;overflow:hidden;flex:none;position:relative;cursor:pointer}
+.marq img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s var(--ease),filter 1s}
+.marq figure:hover img{transform:scale(1.08)}
+@keyframes mq{to{transform:translateX(-50%)}}
+.marq-h{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:40px;color:var(--cream);flex-wrap:wrap}
+.marq-h a{font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold2);text-decoration:none;border-bottom:1px solid rgba(217,189,140,.4);padding-bottom:6px}
+
+/* two col lists */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px)}
+.blk h4{font-family:var(--serif);font-weight:500;font-size:28px;margin:0 0 16px;display:flex;align-items:baseline;gap:12px}
+.blk h4 i{font-style:italic;font-weight:300;color:var(--gold);font-size:20px}
+.blk ul{list-style:none;display:grid;gap:0}
+.blk li{padding:14px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.blk li b,.call b{font-weight:500;color:var(--ink)}
+.dark .blk li b{color:var(--cream)}
+.blk+.blk{margin-top:54px}
+.pic{overflow:hidden;position:relative}
+.pic img{width:100%;height:100%;object-fit:cover}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin-top:26px}
+.tbl th{text-align:left;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;padding:0 16px 14px 0;border-bottom:1px solid var(--gold)}
+.tbl td{padding:18px 16px 18px 0;border-bottom:1px solid var(--line);vertical-align:top;font-size:14.5px}
+.tbl td:first-child{font-weight:500;color:var(--ink);white-space:nowrap}
+.tbl td em{font-family:var(--serif);font-size:19px;font-style:italic;color:var(--text)}
+.dark .tbl td:first-child{color:var(--cream)}
+
+/* hook grid */
+.hooks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:30px}
+.hooks div{background:var(--paper);padding:28px 26px;transition:background .6s var(--ease)}
+.hooks div:hover{background:var(--cream)}
+.hooks h6{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:12px}
+.hooks p{font-family:var(--serif);font-size:22px;line-height:1.25;font-style:italic}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(30px,4vw,60px) clamp(30px,5vw,80px);margin-top:70px}
+.rules .blk+.blk{margin-top:0}
+
+/* roteiros */
+.rot{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,80px);padding:clamp(50px,7vw,90px) 0;border-top:1px solid var(--line);align-items:start}
+.rot:nth-of-type(even){grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+.rot:nth-of-type(even) .rimg{order:2}
+.rimg{position:sticky;top:96px;aspect-ratio:4/5;overflow:hidden;background:var(--cream2);cursor:pointer}
+.rimg img{width:100%;height:118%;object-fit:cover;will-change:transform}
+.rimg .rn{position:absolute;left:18px;bottom:12px;font-family:var(--serif);font-size:clamp(70px,8vw,120px);line-height:.8;color:rgba(255,255,255,.92);font-weight:300;mix-blend-mode:normal;text-shadow:0 2px 30px rgba(0,0,0,.25)}
+.rimg .fmt{position:absolute;top:16px;right:16px;background:rgba(22,19,15,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:var(--cream);font-size:9px;letter-spacing:.3em;padding:8px 12px;text-transform:uppercase}
+.rbody h3{font-family:var(--serif);font-weight:400;font-size:clamp(32px,3.6vw,50px);line-height:1.02;margin:10px 0 14px}
+.rbody .obj{color:var(--mute);font-size:15px;max-width:560px}
+.rbody .obj b{color:var(--ink);font-weight:500}
+.gancho{background:var(--ink);color:var(--cream);padding:26px 30px;margin:28px 0;position:relative;overflow:hidden}
+.gancho h6{font-size:9.5px;letter-spacing:.38em;color:var(--gold2);font-weight:500;margin-bottom:10px}
+.gancho p{font-family:var(--serif);font-style:italic;font-size:clamp(21px,2.1vw,27px);line-height:1.3}
+.gancho::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(217,189,140,.14),transparent);transform:skewX(-18deg);transition:left 1.3s var(--ease)}
+.gancho:hover::after{left:130%}
+.rgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:34px}
+.rgrid h6{font-size:9.5px;letter-spacing:.32em;color:var(--gold);font-weight:500;margin-bottom:12px;text-transform:uppercase}
+.rgrid ol{list-style:none;counter-reset:s}
+.rgrid ol li{counter-increment:s;padding:9px 0 9px 36px;position:relative;font-size:14.5px;border-bottom:1px solid rgba(184,147,90,.14)}
+.rgrid ol li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:9px;font-family:var(--serif);font-style:italic;color:var(--gold);font-size:16px}
+.rgrid ul{list-style:none}
+.rgrid ul li{padding:9px 0 9px 18px;position:relative;font-size:14px;border-bottom:1px solid rgba(184,147,90,.14);color:var(--mute)}
+.rgrid ul li::before{content:"";position:absolute;left:0;top:1.15em;width:6px;height:6px;border:1px solid var(--gold);transform:rotate(45deg)}
+.rfoot{display:flex;flex-wrap:wrap;gap:12px 30px;margin-top:28px;padding-top:20px;border-top:1px dashed var(--line);font-size:14px}
+.rfoot b{font-weight:500;color:var(--ink)}
+.rfoot .dur{margin-left:auto;font-family:var(--serif);font-size:20px;font-style:italic;color:var(--goldd)}
+
+/* stories timeline */
+.tl{position:relative;margin-top:50px}
+.tl::before{content:"";position:absolute;left:150px;top:0;bottom:0;width:1px;background:var(--line)}
+.tl .tli{display:grid;grid-template-columns:150px 1fr 220px;gap:40px;padding:26px 0;position:relative}
+.tl .tli::before{content:"";position:absolute;left:146px;top:34px;width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px var(--paper)}
+.tl .tm{font-family:var(--serif);font-size:24px;font-style:italic;color:var(--goldd);line-height:1.2;padding-top:20px}
+.tl .tli>div{padding-left:10px}
+.tl p{font-size:15px;padding-top:22px}
+.tl .ob{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:500;padding-top:24px}
+.stick{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:40px}
+.stick div{border:1px solid rgba(217,189,140,.25);padding:26px 22px;transition:transform .8s var(--ease),border-color .6s}
+.stick div:hover{transform:translateY(-6px);border-color:var(--gold)}
+.stick h5{font-family:var(--serif);font-size:26px;font-weight:400;margin-bottom:8px;color:var(--gold2)}
+.stick p{font-size:13.5px;color:rgba(248,243,236,.7)}
+.hl{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hl span{display:flex;align-items:center;gap:12px;font-size:13px}
+.hl span i{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);display:grid;place-items:center;font-style:normal;font-family:var(--serif);font-size:13px;padding:4px;text-align:center;line-height:1.1;background:var(--paper);overflow:hidden}
+.hl span i img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.hl .hlc{display:flex;flex-direction:column;align-items:center;gap:8px;font-size:12px}
+
+/* caixinhas */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0 40px}
+.chip{border:1px solid var(--line);padding:10px 18px;font-size:12px;letter-spacing:.06em;transition:all .5s var(--ease);background:transparent}
+.chip:hover{border-color:var(--gold)}
+.chip.on{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.chip small{color:var(--gold);margin-left:6px}
+.qgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.q{position:relative;background:var(--paper);border:1px solid var(--line);padding:30px 26px 54px;cursor:pointer;transition:transform .7s var(--ease),box-shadow .7s var(--ease),border-color .5s;text-align:left;min-height:190px;display:flex;flex-direction:column}
+.q:hover{transform:translateY(-6px);box-shadow:0 26px 50px -30px rgba(43,37,32,.45);border-color:var(--gold)}
+.q .qn{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:30px;line-height:1}
+.q .qt{font-family:var(--serif);font-size:22px;line-height:1.25;margin-top:16px;color:var(--ink)}
+.q .qc{position:absolute;left:26px;bottom:20px;font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+.q .cp{position:absolute;right:20px;bottom:18px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(6px);transition:all .5s var(--ease)}
+.q:hover .cp{opacity:1;transform:none}
+.q.hide{display:none}
+.toast{position:fixed;left:50%;bottom:30px;transform:translate(-50%,30px);background:var(--ink);color:var(--cream);padding:14px 24px;font-size:12px;letter-spacing:.12em;z-index:200;opacity:0;pointer-events:none;transition:all .6s var(--ease);border:1px solid rgba(217,189,140,.4)}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* calendar */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:40px}
+.day{background:var(--paper);border:1px solid var(--line);padding:22px 16px 18px;display:flex;flex-direction:column;min-height:220px;transition:transform .7s var(--ease)}
+.day:hover{transform:translateY(-6px)}
+.day h5{font-family:var(--serif);font-size:24px;font-weight:400}
+.day p{font-size:13px;margin-top:10px;flex:1}
+.day span{font-size:9px;letter-spacing:.3em;text-transform:uppercase;font-weight:500;padding:6px 9px;align-self:flex-start;margin-top:14px}
+.st-topo{background:var(--ink);color:var(--gold2)}
+.st-meio{background:var(--gold);color:#fff}
+.st-fundo{background:var(--cream2);color:var(--goldd)}
+.blocks{display:grid;gap:0;margin-top:30px}
+.blocks>div{display:grid;grid-template-columns:140px 1fr;gap:30px;padding:22px 0;border-bottom:1px solid rgba(217,189,140,.2);align-items:center}
+.blocks b{font-family:var(--serif);font-weight:300;font-size:40px;color:var(--gold2);line-height:1}
+.blocks b small{font-size:16px;font-style:italic}
+.blocks .bt{height:3px;background:rgba(217,189,140,.15);margin-top:12px;position:relative}
+.blocks .bt i{position:absolute;inset:0 auto 0 0;background:var(--gold)}
+.blocks p{font-size:14.5px;color:rgba(248,243,236,.78)}
+.season{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+.season div{padding:30px 26px;background:var(--cream);position:relative;overflow:hidden}
+.season h5{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1}
+.season p{font-size:14px;margin-top:12px}
+
+/* code */
+.code{background:var(--ink);color:var(--cream2);font-family:ui-monospace,Menlo,monospace;font-size:13px;padding:28px 30px;line-height:2;margin-top:20px;overflow-x:auto}
+.code .k{color:var(--gold2)}
+
+/* checklists */
+.ckl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px);margin-top:40px}
+.ckhead{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.ckhead h4{font-family:var(--serif);font-weight:400;font-size:32px}
+.ring{width:58px;height:58px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:2}
+.ring .bg{stroke:var(--cream2)}
+.ring .fg{stroke:var(--gold);stroke-linecap:round;transition:stroke-dashoffset .9s var(--ease)}
+.ring span{position:absolute;inset:0;display:grid;place-items:center;font-size:11px;font-weight:500}
+.ck{display:flex;gap:16px;align-items:flex-start;padding:15px 0;border-bottom:1px solid var(--line);cursor:pointer;font-size:14.5px;user-select:none;transition:color .4s}
+.ck .bx{flex:none;width:20px;height:20px;border:1px solid var(--gold);margin-top:2px;position:relative;transition:background .4s var(--ease)}
+.ck .bx::after{content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;border:solid #fff;border-width:0 1.5px 1.5px 0;transform:rotate(45deg) scale(0);transition:transform .45s var(--ease)}
+.ck.done{color:var(--mute)}
+.ck.done .bx{background:var(--gold)}
+.ck.done .bx::after{transform:rotate(45deg) scale(1)}
+.ck.done .tx{text-decoration:line-through;text-decoration-color:var(--gold)}
+.reset{margin-top:22px;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--line);padding-bottom:4px}
+.quote{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,72px);line-height:1.08;max-width:1100px}
+.quote em{font-style:italic;color:var(--gold2)}
+
+/* next */
+.next{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:clamp(50px,7vw,90px) var(--gut);background:var(--ink);color:var(--cream);cursor:pointer;position:relative;overflow:hidden}
+.next::before{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .9s var(--ease)}
+.next:hover::before{transform:scaleY(1)}
+.next>*{position:relative}
+.next small{font-size:10px;letter-spacing:.45em;color:var(--gold2);text-transform:uppercase;transition:color .6s}
+.next:hover small{color:var(--ink)}
+.next h4{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,72px);line-height:1;margin-top:10px}
+.next .arr{width:clamp(60px,7vw,96px);height:clamp(60px,7vw,96px);border:1px solid rgba(217,189,140,.5);border-radius:50%;display:grid;place-items:center;font-size:24px;flex:none;transition:transform .9s var(--ease),border-color .6s}
+.next:hover .arr{transform:rotate(-45deg);border-color:var(--ink)}
+
+footer{background:var(--ink);color:rgba(248,243,236,.5);font-size:11px;letter-spacing:.25em;text-transform:uppercase;padding:34px var(--gut);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;border-top:1px solid rgba(217,189,140,.15)}
+footer a{color:var(--gold2);text-decoration:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:300;background:rgba(14,12,10,.94);display:grid;place-items:center;opacity:0;pointer-events:none;transition:opacity .6s var(--ease)}
+.lb.on{opacity:1;pointer-events:auto}
+.lb img{max-height:86vh;max-width:92vw;transform:scale(.94);transition:transform .8s var(--ease)}
+.lb.on img{transform:none}
+.lb p{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:var(--cream2);font-family:var(--serif);font-style:italic;font-size:19px;padding:0 20px}
+.lb button{position:absolute;color:var(--cream);font-size:11px;letter-spacing:.3em;padding:20px}
+.lb .x{top:10px;right:14px}
+.lb .pv{left:6px;top:50%;transform:translateY(-50%);font-size:28px}
+.lb .nx{right:6px;top:50%;transform:translateY(-50%);font-size:28px}
+
+/* reveal base */
+.rv{opacity:0;transform:translateY(40px)}
+.no-js .rv,.reduce .rv{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  .fgrid{grid-template-columns:repeat(2,1fr)}
+  .princ{grid-template-columns:repeat(2,1fr)}
+  .hooks,.qgrid{grid-template-columns:repeat(2,1fr)}
+  .week{grid-template-columns:repeat(4,1fr)}
+  .stick{grid-template-columns:repeat(3,1fr)}
+  .tl .tli{grid-template-columns:120px 1fr}
+  .tl .ob{grid-column:2;padding-top:0}
+  .tl::before{left:120px}.tl .tli::before{left:116px}
+}
+@media (max-width:760px){
+  body{font-size:14.5px}
+  .fstage{grid-template-columns:1fr;gap:16px}
+  .fgrid{grid-template-columns:1fr 1fr;gap:18px}
+  .callouts,.cols,.rules,.ckl,.season{grid-template-columns:1fr}
+  .princ{grid-template-columns:1fr}
+  .hooks,.qgrid{grid-template-columns:1fr}
+  .rot,.rot:nth-of-type(even){grid-template-columns:1fr}
+  .rot:nth-of-type(even) .rimg{order:0}
+  .rimg{position:relative;top:0;aspect-ratio:4/4.4}
+  .rgrid{grid-template-columns:1fr;gap:24px}
+  .week{grid-template-columns:repeat(2,1fr)}
+  .day{min-height:170px}
+  .stick{grid-template-columns:1fr 1fr}
+  .tl::before{left:6px}.tl .tli{grid-template-columns:1fr;gap:4px;padding-left:30px}
+  .tl .tli::before{left:2px}
+  .tl .tli>div{padding-left:0}
+  .tl .tm,.tl p,.tl .ob{padding-top:0}
+  .tl .ob{grid-column:auto}
+  .blocks>div{grid-template-columns:90px 1fr;gap:18px}
+  .blocks b{font-size:30px}
+  .tbl.resp thead{display:none}
+  .tbl.resp tr{display:block;border-bottom:1px solid var(--line);padding:14px 0}
+  .tbl.resp td{display:block;border:0;padding:4px 0}
+  .tbl.resp td:first-child{white-space:normal}
+  .tbl.resp td[data-l]::before{content:attr(data-l);display:block;font-size:9px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;font-weight:500;margin-top:6px}
+  .rfoot .dur{margin-left:0}
+  .hero .sub p{font-size:13px}
+  .hero::before{background:linear-gradient(180deg,rgba(22,19,15,.6) 0%,rgba(22,19,15,.2) 28%,rgba(22,19,15,.55) 50%,rgba(22,19,15,.95) 100%)}
+  .hero .eyebrow{font-size:9px;letter-spacing:.35em}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body class="no-js">
+<div id="pre"><div class="pw"><div class="pn" id="pn"></div><div class="pl"></div><div class="ps">MODA FESTA</div></div></div>
+<div class="cur" id="cur"><i>VER</i></div>
+
+<header class="hero" id="top">
+  <img class="hp" src="img/f01.jpg" alt="">
+  <video id="hv" src="img/reel.mp4" poster="img/f01.jpg" autoplay muted loop playsinline preload="auto"></video>
+  <div class="frame"></div>
+  <div class="top">
+    <div class="brand"><img src="img/avatar.jpg" alt="Joyce Corse">JOYCE CORSE</div>
+    <span>NOV · 2026</span>
+  </div>
+  <div class="content">
+    <div class="eyebrow hl-in">Joyce Corse Moda Festa · Guia de Gravação</div>
+    <h1><span class="ln"><span>Guia de Gravação</span></span><span class="ln"><span><em>de topo a fundo</em></span></span><span class="ln"><span><em>de funil</em></span></span></h1>
+    <div class="sub hl-in">
+      <p>Roteiros, técnica de gravação, 50 ideias de caixinhas de pergunta e rotina de conteúdo para um ateliê de aluguel de vestidos de alto padrão.</p>
+      <div class="scroll-ind"><span></span>ROLE</div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs"><div class="in" id="tabin"><div class="ind" id="ind"></div></div><div class="prog" id="prog"></div></nav>
+<main id="main"></main>
+
+<div class="lb" id="lb"><button class="x" id="lbx">FECHAR ✕</button><button class="pv" id="lbp">‹</button><img id="lbi" alt=""><button class="nx" id="lbn">›</button><p id="lbc"></p></div>
+<div class="toast" id="toast">Pergunta copiada</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script>
+/* ============ CONTEÚDO (texto do PDF) ============ */
+const P = n => `img/f${String(n).padStart(2,'0')}.jpg`;
+const GAL = [1,3,5,7,9,10,13,14,16,17,19,20,22,23,24,25,26,27,28,29,30,31,32,33,2,11,12,15,18,21,4,8];
+
+const ROT = {
+topo:[
+ {n:'01',t:'Transformação no provador',f:'Reels',img:5,o:'Parar a rolagem com o impacto visual da peça vestida.',g:'“Ela entrou de calça jeans… e saiu assim.” (corte seco para o vestido)',
+  r:['Cliente (ou modelo) de roupa comum na frente do espelho.','Corte no estalo de dedo/giro para o vestido completo, já com sapato e acessório.','3 a 4 planos rápidos de detalhe: costas, cauda, brilho do tecido em movimento.','Final: giro lento de corpo inteiro.'],
+  k:['Plano aberto do espelho (fixo no tripé, mesma posição nos dois looks).','Detalhes em macro: bordado, decote, fenda.','Movimento: caminhada em direção à câmera.'],
+  c:'“Escolha o seu para a próxima festa — link na bio.”',d:'10–20s'},
+ {n:'02',t:'Dress code decodificado',f:'Reels / Carrossel',img:20,o:'Educar e gerar salvamentos/compartilhamentos.',g:'“Black tie, passeio completo ou esporte fino? Nunca mais erre o traje do convite.”',
+  r:['Joyce na frente da arara apresentando cada traje.','Para cada dress code: 1 frase de definição + 1 vestido do acervo que encaixa.','Erro comum de cada traje (ex.: vestido curto em black tie).','Fechamento: “Salva para consultar quando o convite chegar.”'],
+  k:['Joyce falando para a câmera (plano médio).','Inserts de 2s de cada vestido citado.','Texto na tela com o nome de cada traje.'],
+  c:'“Salve e mande para a amiga que vai no mesmo casamento.”',d:'30–45s'},
+ {n:'03',t:'3 erros ao escolher vestido de madrinha',f:'Reels',img:4,o:'Gerar identificação com o público mais frequente.',g:'“Se você é madrinha, não cometa esses 3 erros.”',
+  r:['Erro 1: não alinhar a paleta com os noivos.','Erro 2: deixar para escolher em cima da hora (ajuste precisa de tempo).','Erro 3: escolher o modelo que ficou lindo na foto, mas não no seu corpo.','Mostrar a solução de cada um com uma peça do acervo.'],
+  k:['Joyce falando (A-roll).','Grupo de vestidos da mesma paleta lado a lado.','Fita métrica / ajuste sendo feito.'],
+  c:'“Madrinha? Chama no WhatsApp e agende sua prova.”',d:'30–40s'},
+ {n:'04',t:'Cores certas por horário do evento',f:'Reels / Carrossel',img:3,o:'Conteúdo de utilidade que atrai quem ainda não conhece a marca.',g:'“Casamento de dia ou de noite? A cor do vestido muda tudo.”',
+  r:['Dia/ao ar livre: tons claros, florais, tecidos leves (mostrar 2 peças).','Noite: tons profundos, brilho, cetim, paetê (mostrar 2 peças).','Cores a evitar: branco/off-white e, em alguns casos, a cor das madrinhas.','Encerramento com pergunta para comentário.'],
+  k:['Peças estendidas sobre fundo neutro.','Peça na arara com luz natural (dia) x luz quente (noite).'],
+  c:'“Comenta o horário do seu evento que eu indico uma cor.”',d:'25–40s'},
+ {n:'05',t:'Detalhe que ninguém vê',f:'Reels',img:13,o:'Mostrar o nível de acabamento (alto padrão).',g:'“Olha o que tem por dentro de um vestido de alto padrão.”',
+  r:['Macro do forro, barbatanas, zíper invisível, acabamento interno.','Narração curta explicando por que isso faz o vestido vestir melhor.','Vestido vestido em movimento como prova final.'],
+  k:['Câmera bem próxima, luz lateral para dar textura.','Mão da Joyce mostrando cada detalhe.'],
+  c:'“Siga para ver mais bastidores do ateliê.”',d:'15–25s'},
+ {n:'06',t:'Chegou peça nova (unboxing de coleção)',f:'Reels / Stories',img:26,o:'Gerar desejo e recorrência de visita ao perfil.',g:'“Acabou de chegar e já tem gente perguntando por ele.”',
+  r:['Abertura da capa/embalagem.','Peça sendo retirada e colocada no cabide.','Primeiro giro no manequim ou em modelo.','Pergunta: “Para qual evento você usaria?”'],
+  k:['Mãos abrindo a capa (plano fechado).','Peça no manequim com luz de destaque.','Reação espontânea da equipe.'],
+  c:'“Quer ser a primeira a usar? Reserve pelo WhatsApp.”',d:'10–20s'},
+ {n:'07',t:'POV: você é a mãe da noiva',f:'Reels',img:11,o:'Atingir um público de alto ticket e pouco disputado.',g:'“POV: sua filha vai casar e você quer estar impecável — sem parecer a noiva.”',
+  r:['Mostrar 3 opções elegantes (tons, comprimentos, mangas).','Dica de conforto: tecidos que não marcam e permitem sentar/dançar.','Fechamento com a cliente real no evento (com autorização).'],
+  k:['Peças em modelo/cliente.','Fotos do evento enviadas pela cliente.'],
+  c:'“Mãe dos noivos? Agende uma prova exclusiva.”',d:'20–30s'},
+ {n:'08',t:'Formatura: o vestido da foto que fica para sempre',f:'Reels',img:27,o:'Sazonal (out–fev), alto volume de busca.',g:'“Você só se forma uma vez. Esse é o vestido da foto que vai para a parede.”',
+  r:['Montagem rápida de 5 vestidos de formatura.','Dica: brilho e cor contrastando com a beca/fundo do baile.','Reforçar a antecedência para garantir a peça na data.'],
+  k:['Giro de cada vestido (2s cada).','Cliente real dançando no baile (UGC autorizado).'],
+  c:'“Formanda 2026/27? Garanta a data pelo WhatsApp.”',d:'15–25s'},
+ {n:'09',t:'Vestido x tipo de corpo',f:'Reels',img:17,o:'Conteúdo que gera comentários e compartilhamento.',g:'“O mesmo vestido em 3 corpos diferentes.”',
+  r:['Mesma peça (ou mesma modelagem) em 3 mulheres reais.','Joyce comenta o que valoriza cada silhueta.','Mensagem: o ajuste certo faz a peça parecer feita sob medida.'],
+  k:['Três clientes/colaboradoras no mesmo enquadramento.','Detalhe do ajuste sendo feito.'],
+  c:'“Não sabe qual modelagem é a sua? Pergunta na caixinha.”',d:'20–35s'},
+ {n:'10',t:'Tendências da temporada',f:'Reels / Carrossel',img:32,o:'Posicionar a marca como referência em moda festa.',g:'“As 4 tendências de moda festa que vão dominar os casamentos de 2027.”',
+  r:['Tendência 1 a 4 com uma peça do acervo cada.','Como usar sem exagero.','Qual delas a seguidora usaria (enquete/comentário).'],
+  k:['Joyce falando + inserts das peças.','Texto grande na tela com o nome da tendência.'],
+  c:'“Salve para o próximo convite.”',d:'30–45s'},
+ {n:'11',t:'Vestido em câmera lenta (estético)',f:'Reels / Anúncio ThruPlay',img:29,o:'Formato de alto alcance para ThruPlay.',g:'Sem fala: começa direto no movimento da cauda/tecido.',
+  r:['Modelo girando ou caminhando em câmera lenta.','Música instrumental elegante.','Texto curto: nome do vestido + “disponível para aluguel”.'],
+  k:['Gravar em 60fps ou 120fps (câmera lenta).','Ventilador leve para movimento do tecido.','Contra-luz (janela atrás) para brilho.'],
+  c:'“Disponível para aluguel — chame no WhatsApp.”',d:'8–15s'},
+ {n:'12',t:'Um dia no ateliê (bastidor)',f:'Reels / Stories',img:19,o:'Humanizar a marca e mostrar a operação.',g:'“Como é um sábado de alta temporada em um ateliê de vestidos de festa.”',
+  r:['Abertura do ateliê pela manhã.','Peças sendo vaporizadas e organizadas.','Provas acontecendo (sem expor cliente sem autorização).','Fim do dia: araras prontas para retirada.'],
+  k:['Time-lapse da arrumação.','Cenas curtas de 1–2s de cada etapa.'],
+  c:'“Siga para acompanhar os bastidores.”',d:'20–30s'}
+],
+meio:[
+ {n:'13',t:'Como funciona o aluguel (passo a passo)',f:'Reels / Anúncio Site',img:12,o:'Quebrar a objeção nº 1: “não sei como funciona”.',g:'“Nunca alugou vestido? Te explico em 30 segundos.”',
+  r:['Agendamento da prova pelo WhatsApp.','Prova no ateliê com atendimento personalizado.','Reserva da data do evento.','Ajustes (se necessário).','Retirada perto da data / devolução após o evento.','Higienização profissional entre cada uso.'],
+  k:['Joyce falando em plano médio.','Insert de cada etapa (agenda, provador, costura, embalagem, devolução).'],
+  c:'“Agende sua prova pelo link da bio.”',d:'30–45s'},
+ {n:'14',t:'“Vestido alugado é usado?” — higienização',f:'Reels',img:14,o:'Quebrar a objeção de higiene, crítica no alto padrão.',g:'“A pergunta que toda cliente tem vergonha de fazer: o vestido está limpo?”',
+  r:['Mostrar o processo real de limpeza/higienização entre usos.','Vaporização, inspeção de costuras, armazenamento em capa.','Frase de fechamento: “Cada cliente recebe a peça como se fosse a primeira.”'],
+  k:['Processo completo em takes curtos.','Peça embalada pronta para entrega.'],
+  c:'“Ficou alguma dúvida? Manda na caixinha.”',d:'20–35s'},
+ {n:'15',t:'Ajuste perfeito (antes e depois)',f:'Reels',img:30,o:'Provar que a peça veste como sob medida.',g:'“Antes do ajuste x depois do ajuste. Olha a diferença.”',
+  r:['Cliente com a peça antes do ajuste (marcar com alfinetes).','Costureira trabalhando.','Mesma cliente com a peça ajustada.'],
+  k:['Mesmo enquadramento antes e depois.','Macro da costura/alfinetes.'],
+  c:'“Agende sua prova e saia com o vestido ajustado para você.”',d:'15–25s'},
+ {n:'16',t:'Depoimento de cliente real',f:'Reels / Anúncio Site',img:7,o:'Prova social: a voz de quem já alugou.',g:'Começar com a frase mais forte da cliente (ex.: “Me senti a mais bonita da festa”).',
+  r:['Cliente conta o evento e por que escolheu alugar.','Como foi o atendimento e a prova.','Foto/vídeo dela no evento.','Recomendação final.'],
+  k:['Gravar no ateliê ou por vídeo da própria cliente (vertical).','Pedir fotos do evento em alta.','Autorização de uso de imagem por escrito.'],
+  c:'“Quer viver essa experiência? Agende sua prova.”',d:'30–60s'},
+ {n:'17',t:'Tour pelo ateliê',f:'Reels',img:8,o:'Mostrar estrutura e gerar confiança para a visita.',g:'“Vem conhecer onde você vai escolher o vestido do seu evento.”',
+  r:['Fachada/entrada.','Araras organizadas por cor/ocasião.','Provador, espelho, iluminação.','Área de ajuste.','Convite para visitar.'],
+  k:['Plano contínuo caminhando (estabilizador ou passo lento).','Inserts de detalhes do espaço.'],
+  c:'“Endereço e agendamento no link da bio.”',d:'20–40s'},
+ {n:'18',t:'Quem é a Joyce',f:'Reels / Destaque',img:9,o:'Conexão com a fundadora; marca com rosto converte mais.',g:'“Eu sou a Joyce, e há X anos vesto mulheres para os dias mais importantes da vida delas.”',
+  r:['Origem do ateliê.','O que torna o atendimento diferente.','Uma história marcante de cliente.','Convite para conhecer.'],
+  k:['Joyce sentada, luz suave, fundo com araras desfocadas.','Inserts de fotos antigas e do dia a dia.'],
+  c:'“Vem me conhecer pessoalmente — agende sua prova.”',d:'45–60s'},
+ {n:'19',t:'Comprar x alugar',f:'Reels / Carrossel',img:10,o:'Justificar o valor do aluguel para alto padrão.',g:'“Por que tantas mulheres estão alugando em vez de comprar vestido de festa?”',
+  r:['Vestido de festa é usado 1–2 vezes e fica no armário.','Aluguel permite usar peças de grife/alto padrão a cada evento.','Não repete look nas fotos.','Sem custo de manutenção e armazenamento.'],
+  k:['Joyce falando.','Guarda-roupa cheio x arara do ateliê (contraste visual).'],
+  c:'“Agende sua prova e conheça o acervo.”',d:'25–40s'},
+ {n:'20',t:'Montando o look completo',f:'Reels',img:2,o:'Mostrar valor agregado (styling).',g:'“Vestido escolhido. Agora olha como o acessório muda tudo.”',
+  r:['Mesmo vestido com 2–3 combinações de brinco, bolsa, sapato.','Dica rápida de cada combinação.','Indicar o melhor para o horário/evento.'],
+  k:['Plano fixo do corpo inteiro trocando acessórios.','Detalhes de mão/orelha.'],
+  c:'“Na prova, a gente monta o look completo com você.”',d:'20–30s'},
+ {n:'21',t:'Perguntas frequentes em sequência',f:'Reels / Destaque',img:15,o:'Responder objeções de uma vez.',g:'“As 5 perguntas que mais recebo no WhatsApp.”',
+  r:['Com quanto tempo de antecedência reservar?','Posso provar mais de um modelo?','E se o vestido não servir?','E se manchar ou rasgar na festa?','Qual o prazo de devolução?'],
+  k:['Joyce respondendo, uma pergunta por corte.','Texto da pergunta na tela.'],
+  c:'“Sua dúvida não está aqui? Chama no WhatsApp.”',d:'40–60s'},
+ {n:'22',t:'Cliente no evento (UGC)',f:'Reels / Stories',img:28,o:'Mostrar o resultado final em contexto real.',g:'“Ela alugou com a gente, olha como ficou no casamento.”',
+  r:['Vídeos/fotos enviados pelas clientes durante o evento.','Legenda com a ocasião (madrinha, formanda, convidada).','Agradecimento à cliente.'],
+  k:['Pedir sempre na devolução: “Manda um vídeo seu dançando!”.','Montar compilado mensal.'],
+  c:'“A próxima pode ser você — agende sua prova.”',d:'15–30s'}
+],
+fundo:[
+ {n:'23',t:'Convite direto para a prova',f:'Anúncio RMKT WhatsApp',img:1,o:'Converter quem já conhece a marca.',g:'“Se você tem um evento nos próximos meses, esse vídeo é para você.”',
+  r:['Joyce falando direto para a câmera, sem rodeio.','O que acontece na prova (atendimento individual, vários modelos, ajuste).','Como agendar: um clique no botão do WhatsApp.'],
+  k:['Joyce em plano médio, olhando para a lente.','Insert do provador e da arara.'],
+  c:'“Clique no botão e agende sua prova agora.”',d:'15–30s'},
+ {n:'24',t:'Datas concorridas (escassez real)',f:'Anúncio RMKT / Stories',img:16,o:'Gerar urgência legítima na alta temporada.',g:'“Dezembro está quase fechado. Esses são os últimos vestidos livres para as datas de formatura.”',
+  r:['Mostrar a agenda/araras com peças reservadas (etiquetas).','Mostrar as peças ainda disponíveis.','Chamada para garantir a data.'],
+  k:['Etiquetas “reservado” em close.','Peças disponíveis em destaque.'],
+  c:'“Garanta a sua data pelo WhatsApp.”',d:'15–25s'},
+ {n:'25',t:'Reserve em 3 passos',f:'Anúncio RMKT WhatsApp',img:18,o:'Reduzir atrito: mostrar que é simples.',g:'“Reservar seu vestido é mais fácil do que escolher a cor.”',
+  r:['Passo 1: chame no WhatsApp.','Passo 2: agende a prova.','Passo 3: escolha, ajuste e garanta a data.'],
+  k:['Tela do celular abrindo o WhatsApp (gravação de tela).','Provador e entrega da peça.'],
+  c:'“Clique em Enviar mensagem.”',d:'10–20s'},
+ {n:'26',t:'Peça específica (destaque de acervo)',f:'Anúncio RMKT WhatsApp',img:23,o:'Remarketing com produto: quem viu o perfil volta pela peça.',g:'“Esse é o vestido mais pedido do mês.”',
+  r:['Giro completo da peça vestida.','Para quais eventos funciona.','Tamanhos/ajustes possíveis.','Chamada para consultar disponibilidade da data.'],
+  k:['Peça em modelo + detalhes.','Nome do vestido na tela.'],
+  c:'“Consulte a disponibilidade para a sua data.”',d:'10–20s'},
+ {n:'27',t:'Depoimento + CTA',f:'Anúncio RMKT WhatsApp',img:21,o:'Prova social com chamada direta.',g:'Frase forte de cliente nos primeiros 3 segundos.',
+  r:['Trecho curto do depoimento (10–15s).','Joyce entra com o convite: “Agende você também.”'],
+  k:['Reaproveitar depoimentos do meio do funil em versão curta.'],
+  c:'“Agende sua prova pelo WhatsApp.”',d:'15–25s'},
+ {n:'28',t:'Quebra da última objeção (preço/valor)',f:'Anúncio RMKT WhatsApp',img:25,o:'Fazer a cliente que hesita pelo valor decidir.',g:'“Você paga uma fração do valor do vestido e usa uma peça de alto padrão.”',
+  r:['Comparar o valor de compra de uma peça similar com a experiência de aluguel (sem expor preços se não quiser).','O que está incluso: prova, ajuste, higienização.','Convite para conhecer as opções dentro do orçamento.'],
+  k:['Joyce falando.','Inserts de ajuste e entrega.'],
+  c:'“Me chama e eu te mostro as opções para o seu evento.”',d:'20–30s'},
+ {n:'29',t:'Sequência de Stories de venda',f:'Stories',img:24,o:'Converter a audiência quente do dia.',g:'Story 1: “Tenho 3 horários de prova livres esse sábado.”',
+  r:['Story 2: vídeo rápido de peças disponíveis.','Story 3: depoimento/print de cliente satisfeita.','Story 4: figurinha de link para o WhatsApp + “responde EU QUERO”.'],
+  k:['Gravar no mesmo dia, com a Joyce falando.','Usar figurinha de link e de contagem regressiva.'],
+  c:'“Clique no link e garanta seu horário.”',d:'4 stories'}
+]};
+
+const CX = [
+ {c:'Dúvidas sobre aluguel',s:'quebram objeções',q:['Qual sua maior dúvida sobre alugar vestido de festa?','O que te impede de alugar em vez de comprar?','Com quanto tempo de antecedência você acha que precisa reservar?','Pergunte qualquer coisa sobre como funciona a prova.','Já alugou vestido antes? Como foi sua experiência?','Qual sua dúvida sobre ajustes e tamanhos?','Você tem receio de vestido alugado? Me conta por quê.','O que você gostaria de saber sobre higienização das peças?']},
+ {c:'Evento e ocasião',s:'qualificam o lead',q:['Qual é o seu próximo evento? Casamento, formatura, 15 anos…','Quando é a data do seu evento? Te digo se ainda dá tempo.','Você vai ser madrinha, convidada ou mãe dos noivos?','O casamento é de dia ou de noite? Te indico a cor.','Qual o dress code do seu convite?','Formanda 2026/27? Qual o tema do seu baile?','Vai em casamento na praia ou no campo? Me conta.','Qual cor as madrinhas do seu casamento vão usar?','Me manda o estilo do seu evento que eu sugiro um modelo.']},
+ {c:'Estilo e consultoria',s:'geram respostas em vídeo',q:['Qual parte do corpo você mais gosta de valorizar?','Me conta seu tipo de corpo que eu indico a modelagem ideal.','Longo ou midi? Me diz o evento que eu respondo.','Brilho ou tecido liso: qual é mais você?','Qual cor você nunca teve coragem de usar?','Decote, costas nuas ou fenda: qual seu ponto de destaque?','Manda uma palavra que define o look dos seus sonhos.','Qual acessório você nunca dispensa numa festa?','Sapato alto ou confortável? Me conta que eu te ajudo a escolher.','Qual celebridade tem o estilo de festa que você ama?']},
+ {c:'Acervo e desejo',s:'geram tráfego para peças',q:['Qual vestido do nosso perfil você usaria agora?','Que cor você quer ver mais no nosso acervo?','Qual modelo você quer que a gente mostre vestido?','Monte seu look: escolha um vestido do feed e eu combino os acessórios.','Qual peça nova você quer ver primeiro?','Quer ver algum vestido em câmera lenta? Me diz qual.','Qual vestido do perfil tem a sua cara? Manda o print.']},
+ {c:'Enquetes e quiz',s:'engajamento rápido',q:['Enquete: vestido vermelho ou verde-esmeralda para casamento à noite?','Enquete: você compraria ou alugaria um vestido de R$ 5 mil para usar uma vez?','Quiz: qual traje significa “black tie”? (3 opções)','Enquete: cabelo preso ou solto com vestido tomara que caia?','Quiz: convidada pode usar branco em casamento? (Sim/Não)','Enquete: qual desses dois looks você usaria na formatura?','Controle deslizante: o quanto você ama vestido com brilho?','Enquete: você prefere provar sozinha ou com amigas?']},
+ {c:'Bastidores e relacionamento',s:'conexão com a marca',q:['O que você quer ver dos bastidores do ateliê?','Pergunte qualquer coisa para a Joyce.','Qual foi o look mais marcante que você já usou numa festa?','Conta uma história de evento em que você se sentiu linda.','Qual conteúdo você quer ver mais por aqui?','Me manda uma foto do seu evento com nosso vestido!','Qual foi o maior perrengue que você já passou com roupa em festa?','Tem alguma amiga que precisa de vestido? Marca ela aqui.']}
+];
+
+const CK = {
+ g:['Roteiro definido com etapa do funil (topo, meio ou fundo)','Gancho dos 3 primeiros segundos escrito','Peças vaporizadas e sem etiquetas aparentes','Acessórios separados','Cenário limpo (sem sacolas, fios, caixas)','Lente limpa','Celular em modo avião e com espaço livre','Vertical 9:16, 4K, foco e exposição travados','Luz testada (sem mistura de cores)','Microfone conectado e testado','Autorização de imagem das clientes','B-roll extra gravado'],
+ p:['Gancho forte no primeiro frame','Cortes sem pausas e respirações','Legenda revisada (sem erros de português)','Texto dentro da área segura','CTA claro no final (falado e escrito)','Capa do Reels bonita e coerente com o feed','Legenda do post com pergunta ou CTA','Música adequada (licenciada se for para anúncio)','Versão sem música enviada ao tráfego','Arquivo nomeado no padrão','Link do WhatsApp funcionando','Story de divulgação do Reels publicado']
+};
+
+const TABS = [
+ {id:'funil',n:'01',l:'Funil'},{id:'preparacao',n:'02',l:'Preparação'},{id:'tecnica',n:'03',l:'Técnica'},
+ {id:'topo',n:'04',l:'Topo'},{id:'meio',n:'05',l:'Meio'},{id:'fundo',n:'06',l:'Fundo'},
+ {id:'stories',n:'07',l:'Stories'},{id:'caixinhas',n:'08',l:'Caixinhas'},{id:'producao',n:'09',l:'Produção'},
+ {id:'trafego',n:'10',l:'Tráfego pago'},{id:'checklists',n:'11',l:'Checklists'}
+];
+
+/* ============ TEMPLATES ============ */
+const ul = a => '<ul>'+a.map(x=>`<li>${x}</li>`).join('')+'</ul>';
+const ch = (n,eb,h,lead,img,tag) => `<section class="ch"><div class="bg" style="background-image:url(${P(img)})"></div><div class="wrap"><span class="num rv">${n}</span><div class="eyebrow rv">${eb}</div><h2 class="rv">${h}</h2><p class="lead rv">${lead}</p>${tag?`<span class="tag rv">${tag}</span>`:''}</div></section>`;
+const rotHTML = r => `<article class="rot">
+  <figure class="rimg" data-lb="${r.img}"><img src="${P(r.img)}" alt="${r.t}" loading="lazy"><span class="fmt">${r.f}</span><span class="rn">${r.n}</span></figure>
+  <div class="rbody">
+    <div class="eyebrow rv">Roteiro ${r.n}</div>
+    <h3 class="rv">${r.t}</h3>
+    <p class="obj rv"><b>Objetivo:</b> ${r.o}</p>
+    <div class="gancho rv"><h6>GANCHO (0–3S)</h6><p>${r.g}</p></div>
+    <div class="rgrid rv"><div><h6>Roteiro</h6><ol>${r.r.map(x=>`<li>${x}</li>`).join('')}</ol></div><div><h6>Takes para gravar</h6><ul>${r.k.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
+    <div class="rfoot rv"><span><b>CTA:</b> ${r.c}</span><span class="dur">${r.d}</span></div>
+  </div></article>`;
+const nextHTML = i => i<TABS.length-1 ? `<div class="next" data-go="${TABS[i+1].id}"><div><small>Próximo capítulo · ${TABS[i+1].n}</small><h4>${TABS[i+1].l}</h4></div><span class="arr">→</span></div>` : `<div class="next" data-go="funil"><div><small>Voltar ao início</small><h4>Como o funil funciona</h4></div><span class="arr">↑</span></div>`;
+
+const PANELS = {};
+PANELS.funil = ch('01','01 · Estratégia','Como o funil <em>funciona</em>','Cada vídeo tem uma função. Topo atrai quem nunca ouviu falar do ateliê, meio faz essa pessoa confiar e fundo faz ela chamar no WhatsApp para agendar a prova. Gravar pensando na etapa evita o erro mais comum: vídeo bonito que não leva ninguém a lugar nenhum.',8) + `
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">O papel de cada vídeo</div><h3 class="h3 rv">Três etapas, <em>três trabalhos diferentes</em></h3>
+ <div class="funnel">
+  ${[['Topo','Atenção',100,'Mulheres da região com eventos pela frente, que ainda não conhecem a marca','Parar a rolagem e encantar com a peça e o estilo','Reels estéticos, educativos, tendências, bastidores','ThruPlay, retenção, compartilhamentos, salvamentos'],
+     ['Meio','Confiança',62,'Quem já viu, curtiu ou seguiu','Explicar como funciona, mostrar estrutura e provas sociais, eliminar receios','Passo a passo, depoimentos, FAQ, tour, “quem é a Joyce”','Visitas ao perfil/site, cliques, tempo de visualização'],
+     ['Fundo','Conversão',34,'Quem já interagiu, visitou o site ou chamou antes','Pedir a ação: agendar a prova / consultar a data','Convite direto, escassez real, peça específica, depoimento + CTA','Conversas iniciadas no WhatsApp, custo por conversa, provas agendadas']
+    ].map(s=>`<div class="fstage rv"><div class="fn">${s[0]}<small>${s[1]}</small><div class="bar"><i data-w="${s[2]}"></i></div></div><div class="fgrid"><div><h6>Quem assiste</h6><p>${s[3]}</p></div><div><h6>O que o vídeo precisa fazer</h6><p>${s[4]}</p></div><div><h6>Formato</h6><p>${s[5]}</p></div><div><h6>Métrica que importa</h6><p>${s[6]}</p></div></div></div>`).join('')}
+ </div>
+ <div class="callouts">
+  <div class="call rv"><h4>Proporção recomendada de produção</h4><div class="big3"><div>5<small>de topo</small></div><div>3<small>de meio</small></div><div>2<small>de fundo</small></div></div><p>Para cada 10 vídeos gravados: <b>5 de topo</b>, <b>3 de meio</b> e <b>2 de fundo</b>. O topo precisa de mais volume porque se desgasta mais rápido nos anúncios. O fundo precisa de menos peças, mas elas precisam ser renovadas a cada 3–4 semanas para não cansar quem já viu.</p></div>
+  <div class="call rv"><h4>Ligação com as campanhas atuais</h4><p>Topo alimenta as campanhas de <b>ThruPlay</b> e <b>Engajamento</b>. Meio alimenta a campanha de <b>Site (público frio)</b>. Fundo alimenta o <b>Remarketing para WhatsApp</b>. Um vídeo que performa bem no topo pode ganhar uma versão curta de fundo, trocando o final por um convite direto.</p></div>
+ </div>
+</div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="eyebrow rv">Princípios</div><h3 class="h3 rv">Um ateliê de alto padrão <em>nas redes</em></h3>
+ <div class="princ">
+  <div class="rv"><b>i.</b><h5>Exclusividade, não preço.</h5><p>Fale de experiência, atendimento, acabamento e ajuste. Evite palavras como “barato”, “promoção” ou “queima”.</p></div>
+  <div class="rv"><b>ii.</b><h5>A peça é a protagonista.</h5><p>Luz boa, tecido em movimento e detalhes em close vendem mais do que texto.</p></div>
+  <div class="rv"><b>iii.</b><h5>Rosto da marca.</h5><p>A Joyce falando para a câmera cria confiança. Clientes de alto ticket querem saber quem vai atendê-las.</p></div>
+  <div class="rv"><b>iv.</b><h5>Prova social real.</h5><p>Clientes reais em eventos reais valem mais do que qualquer modelo. Sempre com autorização.</p></div>
+ </div>
+</div></section>
+<section class="marq"><div class="wrap"><div class="marq-h"><div><div class="eyebrow" style="color:var(--gold2)">Acervo no Instagram</div><h3 class="h3" style="margin-bottom:0">A peça é a <em>protagonista</em></h3></div><a href="https://www.instagram.com/joycecorse.modafesta/" target="_blank" rel="noopener">@joycecorse.modafesta ↗</a></div></div>
+ <div class="track">${[...GAL,...GAL].map(i=>`<figure data-lb="${i}"><img src="${P(i)}" alt="" loading="lazy"></figure>`).join('')}</div></section>`;
+
+PANELS.preparacao = ch('02','02 · Preparação','Equipamento, <em>luz e cenário</em>','Tudo o que precisa estar pronto antes de apertar o REC.',13) + `
+<section class="sec"><div class="wrap"><div class="cols">
+ <div>
+  <div class="blk rv"><h4>Equipamento mínimo</h4>${ul(['<b>Celular</b> com câmera traseira (sempre a traseira para vídeos de peça; a frontal só para fala rápida em stories).','<b>Tripé</b> com altura de pelo menos 1,60 m (corpo inteiro sem distorção).','<b>Microfone de lapela</b> sem fio para vídeos com fala.','<b>Luz contínua</b>: um painel de LED ou softbox. Ring light só para close de rosto.','<b>Vaporizador</b> de roupas sempre ligado no dia de gravação.','Pano de microfibra para limpar a lente antes de cada take.'])}</div>
+  <div class="blk rv"><h4>Configuração do celular</h4>${ul(['Resolução <b>4K a 30fps</b> para vídeos normais.','<b>60fps ou 120fps</b> para câmera lenta (giro, cauda, tecido).','Grade (linhas de terço) ligada.','Travar foco e exposição (segurar o dedo na tela até aparecer “AE/AF Lock”).','Modo avião ligado para não interromper a gravação.','Gravar sempre na vertical <b>9:16</b>.'])}</div>
+ </div>
+ <div>
+  <div class="blk rv"><h4>Luz</h4>${ul(['<b>Luz natural lateral</b> (janela ao lado) é a mais bonita para tecido: revela textura e brilho.','Nunca gravar com a janela atrás da pessoa, exceto para o efeito de contra-luz proposital.','Evite luzes de cores misturadas (branca + amarela). Escolha uma temperatura e mantenha.','Para paetê e brilho: luz mais pontual e lateral, movimento lento.','Para cetim e seda: luz suave e difusa, evitando reflexo “estourado”.'])}</div>
+  <div class="blk rv"><h4>Cenário</h4>${ul(['Defina <b>3 cenários fixos</b> no ateliê: espelho/provador, arara de destaque e fundo neutro para fala.','Tire do quadro: sacolas, fios, cabides vazios, caixas, etiquetas de preço.','Araras organizadas por cor criam um fundo bonito e reconhecível.','Um elemento de marca discreto (logo na parede, flores, poltrona) repetido nos vídeos ajuda a criar identidade.'])}</div>
+ </div>
+</div>
+<div class="callouts">
+ <div class="call rv"><h4>Preparação das peças</h4><p>Vaporizar todas as peças antes da gravação. Conferir etiquetas internas escondidas, fios soltos e alfinetes. Ter à mão sapato nude e preto, 2–3 pares de brinco e uma clutch neutra para compor qualquer look rapidamente.</p></div>
+ <div class="call rv"><h4>Direito de imagem</h4><p>Toda cliente que aparecer em vídeo precisa autorizar por escrito (pode ser uma mensagem no WhatsApp confirmando que autoriza o uso em redes sociais e anúncios). Guarde o print. Sem autorização, grave apenas de costas ou só a peça.</p></div>
+</div></div></section>`;
+
+PANELS.tecnica = ch('03','03 · Técnica','Regras de ouro <em>da gravação</em>','Gancho, ritmo, legenda e tom de alto padrão.',31) + `
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Regra 1</div><h3 class="h3 rv">O gancho decide tudo <em>(0–3 segundos)</em></h3>
+ <p class="intro rv">Se a pessoa não parar nos primeiros 3 segundos, o resto do vídeo não existe. Comece pelo momento mais forte: a peça vestida, a frase que gera curiosidade ou o movimento do tecido. Nunca comece com “Oi, gente, tudo bem?” ou com o logo.</p>
+ <div class="hooks">
+  ${[['Curiosidade','“A pergunta que toda cliente tem vergonha de fazer…”'],['Identificação','“Se você vai ser madrinha esse ano, assiste até o final.”'],['Erro / alerta','“Não escolha o vestido do casamento antes de ver isso.”'],['Visual','Primeiro frame já com a peça girando, sem fala.'],['Contraste','“De calça jeans para isso em 3 segundos.”'],['Número','“3 erros”, “4 tendências”, “5 perguntas”.']].map(h=>`<div class="rv"><h6>${h[0]}</h6><p>${h[1]}</p></div>`).join('')}
+ </div>
+ <div class="rules">
+  <div class="blk rv"><h4><i>2.</i> Ritmo e edição</h4>${ul(['Troque de plano a cada <b>2–4 segundos</b> em vídeos com fala; corte pausas e respirações.','Grave a mesma fala em <b>2 enquadramentos</b> (médio e fechado) para alternar na edição.','Grave sempre <b>B-roll</b> extra: detalhes, mãos, tecido, arara, provador. Ele salva qualquer edição.','Termine o vídeo de forma que o início possa repetir (loop) quando for estético.'])}</div>
+  <div class="blk rv"><h4><i>3.</i> Legenda e texto na tela</h4>${ul(['Todo vídeo com fala precisa de <b>legenda</b>; a maioria assiste sem som.','Texto na tela no terço central: não coloque nada nos <b>14% de cima</b> nem nos <b>35% de baixo</b> do vídeo (áreas cobertas pela interface do Instagram).','Use no máximo 2 fontes, nas cores da marca. Texto curto (até 8 palavras por tela).'])}</div>
+  <div class="blk rv"><h4><i>4.</i> Fala e postura da Joyce</h4>${ul(['Olhar para a <b>lente</b>, não para a tela.','Falar como se estivesse atendendo uma cliente no provador: próxima, segura e elegante.','Ter um roteiro em tópicos, não um texto decorado. Gravar em blocos curtos (uma ideia por take).','Repetir o take quando errar, sem parar a gravação: é só recomeçar a frase.'])}</div>
+  <div class="blk rv"><h4><i>5.</i> Áudio e música</h4>${ul(['Para <b>orgânico</b>: áudios em alta do Instagram ajudam no alcance.','Para <b>anúncios</b>: use apenas músicas da biblioteca de som do Meta ou trilhas livres de direitos. Músicas comerciais podem ser silenciadas ou bloquear o anúncio.','Entregue sempre ao gestor de tráfego uma <b>versão sem música</b> de cada vídeo.'])}</div>
+ </div>
+</div></section>`;
+
+PANELS.topo = ch('04','04 · Topo de funil','Roteiros de <em>atração</em>','Vídeos para quem ainda não conhece o ateliê. O objetivo é encantar, educar e fazer a pessoa assistir até o fim, seguir ou salvar. Aqui a venda é implícita: a peça e o estilo fazem o trabalho.',3,'12 roteiros · ThruPlay e Engajamento') + `<section class="sec" style="padding-top:20px"><div class="wrap">${ROT.topo.map(rotHTML).join('')}</div></section>`;
+PANELS.meio = ch('05','05 · Meio de funil','Roteiros de <em>confiança</em>','Vídeos para quem já viu a marca e está considerando. O objetivo é gerar confiança: mostrar como funciona, quem atende, a estrutura e a experiência de outras clientes, eliminando cada receio antes que ele vire “vou pensar”.',27,'10 roteiros · Site e consideração') + `<section class="sec" style="padding-top:20px"><div class="wrap">${ROT.meio.map(rotHTML).join('')}</div></section>`;
+PANELS.fundo = ch('06','06 · Fundo de funil','Roteiros de <em>conversão</em>','Vídeos para quem já conhece e já interagiu. O objetivo é um só: fazer a cliente clicar e agendar a prova pelo WhatsApp. Direto, curto e com uma única chamada para ação.',22,'7 roteiros · Remarketing WhatsApp') + `
+<section class="sec" style="padding-bottom:0"><div class="wrap"><div class="call rv" style="background:var(--cream)"><h4>Regras do fundo de funil</h4>${ul(['Uma única chamada para ação por vídeo (“Clique e agende sua prova”).','CTA falado <b>e</b> escrito na tela nos últimos 3 segundos.','Escassez apenas quando for real (datas e peças de fato reservadas). Escassez falsa destrói a confiança de cliente de alto padrão.','Renovar os vídeos de fundo a cada 3–4 semanas.'])}</div></div></section>
+<section class="sec" style="padding-top:40px"><div class="wrap">${ROT.fundo.map(rotHTML).join('')}</div></section>`;
+
+PANELS.stories = ch('07','07 · Stories','Rotina diária <em>de Stories</em>','Stories não precisam de produção. Eles mantêm a audiência quente, alimentam o fundo de funil e geram conversas no WhatsApp. A meta é uma sequência de 6 a 10 stories por dia, distribuídos ao longo do dia.',10,'Sequência pronta') + `
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Um dia de stories</div><h3 class="h3 rv">Do bom dia <em>à figurinha de link</em></h3>
+ <div class="tl">${[['Manhã','Abertura do ateliê, café, araras sendo organizadas. Joyce dando bom dia e contando o que vai acontecer no dia.','Presença e rotina'],['Meio da manhã','Peça do dia em destaque (vídeo de 10s + enquete “usaria?”).','Desejo + interação'],['Almoço','Caixinha de pergunta do dia (veja a aba Caixinhas).','Gerar dúvidas para responder'],['Tarde','Bastidor de prova ou ajuste (com autorização), vaporização, embalagem para retirada.','Prova de operação'],['Fim da tarde','Respostas das caixinhas em vídeo, com a peça na mão.','Autoridade e quebra de objeção'],['Noite','Print/vídeo de cliente no evento + figurinha de link do WhatsApp.','Prova social + conversão']].map(t=>`<div class="tli rv"><div class="tm">${t[0]}</div><div><p>${t[1]}</p></div><div class="ob">${t[2]}</div></div>`).join('')}</div>
+</div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="eyebrow rv">Figurinhas que mais funcionam</div><h3 class="h3 rv">Cinco ferramentas, <em>cinco funções</em></h3>
+ <div class="stick">${[['Enquete','decisões rápidas entre dois vestidos.'],['Caixinha de pergunta','dúvidas e qualificação (data, evento, estilo).'],['Quiz','dress code e etiqueta de festa.'],['Contagem regressiva','chegada de coleção nova ou fechamento de datas da temporada.'],['Link','sempre apontando para o WhatsApp com mensagem pronta.']].map(s=>`<div class="rv"><h5>${s[0]}</h5><p>${s[1]}</p></div>`).join('')}</div>
+</div></section>
+<section class="sec alt"><div class="wrap">
+ <div class="eyebrow rv">Destaques fixos do perfil</div><h3 class="h3 rv">Nesta <em>ordem</em></h3>
+ <div class="hl rv">${[['Como funciona',12],['Acervo',26],['Clientes',28],['Dúvidas',15],['Ateliê',8],['Agende',1]].map(h=>`<div class="hlc"><span><i><img src="${P(h[1])}" alt=""></i></span>${h[0]}</div>`).join('')}</div>
+ <p class="intro rv" style="margin-top:26px">Organize os destaques nesta ordem: <b>Como funciona</b> · <b>Acervo</b> · <b>Clientes</b> · <b>Dúvidas</b> · <b>Ateliê</b> · <b>Agende</b>. Atualize o destaque “Clientes” toda semana.</p>
+</div></section>`;
+
+let qi=0;
+PANELS.caixinhas = ch('08','08 · Interação','50 ideias de <em>caixinhas de pergunta</em>','Caixinhas geram conversa, revelam objeções e qualificam quem está perto de agendar. As respostas viram conteúdo pronto para stories e até para Reels.',33,'Toque numa pergunta para copiar') + `
+<section class="sec"><div class="wrap">
+ <div class="chips rv" id="chips"><button class="chip on" data-f="all">Todas <small>50</small></button>${CX.map((g,i)=>`<button class="chip" data-f="${i}">${g.c} <small>${g.q.length}</small></button>`).join('')}</div>
+ <div class="qgrid" id="qgrid">${CX.map((g,i)=>g.q.map(q=>{qi++;return `<button class="q" data-c="${i}" data-q="${q.replace(/"/g,'&quot;')}"><span class="qn">${String(qi).padStart(2,'0')}</span><span class="qt">${q}</span><span class="qc">${g.c} · ${g.s}</span><span class="cp">Copiar</span></button>`}).join('')).join('')}</div>
+ <div class="call rv" style="margin-top:60px;background:var(--cream)"><h4>Como responder as caixinhas</h4>${ul(['Responda <b>em vídeo</b>, com a Joyce falando e, sempre que possível, mostrando uma peça que resolva a dúvida.','Toda resposta que indicar um vestido termina com figurinha de link para o WhatsApp.','Quem responder com data e tipo de evento é uma cliente em potencial: chame no direct com uma mensagem personalizada.','As 3 melhores perguntas da semana viram Reels de meio de funil.','Salve as respostas no destaque “Dúvidas”.'])}</div>
+</div></section>`;
+
+PANELS.producao = ch('09','09 · Produção','Calendário e <em>dia de gravação</em>','Gravar um pouco todo dia cansa e gera conteúdo inconsistente. O ideal é reservar um período por semana só para gravar (produção em lote) e, no dia a dia, apenas os stories.',16,'Produção em lote') + `
+<section class="sec dark"><div class="wrap">
+ <div class="eyebrow rv">Roteiro do dia de gravação</div><h3 class="h3 rv">4 horas, <em>cinco blocos</em></h3>
+ <div class="blocks">${[[30,'Preparação: vaporizar as peças, montar os 3 cenários, testar luz e áudio, limpar a lente.'],[60,'Vídeos de fala da Joyce (meio e fundo): gravar todos seguidos, mesma roupa e mesmo cenário, trocando apenas o enquadramento.'],[60,'Vídeos de peça (topo): giros, câmera lenta, transformação no espelho, detalhes em macro.'],[45,'B-roll: araras, mãos, ajuste, embalagem, ateliê, fachada. Gravar tudo que puder virar insert.'],[15,'Organização: renomear arquivos e enviar para a pasta compartilhada com o editor/gestor.']].map(b=>`<div class="rv"><b>${b[0]}<small> min</small></b><div><p>${b[1]}</p><div class="bt"><i data-w="${b[0]/60*100}"></i></div></div></div>`).join('')}</div>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Semana modelo de publicação</div><h3 class="h3 rv">Feed e Reels, <em>dia a dia</em></h3>
+ <div class="week">${[['Segunda','Reels educativo (dress code, cores, erros)','Topo'],['Terça','Depoimento ou cliente no evento','Meio'],['Quarta','Reels estético (câmera lenta, transformação)','Topo'],['Quinta','Como funciona / FAQ / bastidor de ajuste','Meio'],['Sexta','Peça em destaque + convite para prova de sábado','Fundo'],['Sábado','Bastidor do ateliê em dia de provas (stories)','Meio'],['Domingo','Carrossel de tendências ou looks da semana','Topo']].map(d=>`<div class="day rv"><h5>${d[0]}</h5><p>${d[1]}</p><span class="st-${d[2].toLowerCase()}">${d[2]}</span></div>`).join('')}</div>
+ <div class="eyebrow rv" style="margin-top:80px">Sazonalidade</div><h3 class="h3 rv">Grave com <em>4–6 semanas de antecedência</em></h3>
+ <div class="season">${[['Out–fev','Formaturas e casamentos de fim de ano. Reforce formatura e escassez de datas.'],['Mar–jun','Casamentos de outono e 15 anos.'],['Jul–set','Casamentos de inverno e planejamento da temporada seguinte.']].map(s=>`<div class="rv"><h5>${s[0]}</h5><p>${s[1]}</p></div>`).join('')}</div>
+</div></section>`;
+
+PANELS.trafego = ch('10','10 · Tráfego pago','Entrega dos vídeos <em>para anúncios</em>','Formatos, nomes de arquivo e especificações para o gestor de tráfego montar as campanhas sem retrabalho.',29) + `
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Especificações técnicas</div><h3 class="h3 rv">O <em>padrão</em> de entrega</h3>
+ <table class="tbl rv"><thead><tr><th>Item</th><th>Padrão</th></tr></thead><tbody>${[['Formato principal','Vertical 9:16 · 1080×1920 px (Reels e Stories)'],['Formato secundário','4:5 · 1080×1350 px (feed): deixe espaço nas laterais ao gravar para permitir o corte'],['Duração','Topo: 8–30s · Meio: 20–60s · Fundo: 10–30s'],['Arquivo','MP4 (H.264), sem marca d\'água de aplicativos de edição'],['Versões','Com legenda e sem legenda · com música e sem música'],['Áreas seguras','Nada importante nos 14% superiores e 35% inferiores da tela']].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table>
+ <div class="cols" style="margin-top:80px">
+  <div class="blk rv"><h4>Variações que ajudam o tráfego</h4>${ul(['Para cada vídeo de topo que for bem, grave <b>2–3 ganchos diferentes</b> para o mesmo corpo de vídeo.','Para cada vídeo de meio, produza uma <b>versão curta de 15s</b> com CTA de WhatsApp para usar no fundo.','Grave o CTA final separado (“Clique e agende sua prova”) para poder colar em qualquer vídeo.'])}</div>
+  <div class="blk rv"><h4>Nomenclatura dos arquivos</h4><p style="font-size:14.5px">Padronize os nomes para facilitar a montagem das campanhas:</p>
+   <div class="code"><span class="k">ETAPA_TEMA_FORMATO_VERSÃO_DATA</span><br><br>TOPO_dresscode_reels_v1_2026-11-20.mp4<br>MEIO_comofunciona_reels_v2_2026-11-20.mp4<br>FUNDO_convite-prova_reels_v1_2026-11-20.mp4</div></div>
+ </div>
+</div></section>
+<section class="sec alt"><div class="wrap">
+ <div class="eyebrow rv">O que medir em cada etapa</div><h3 class="h3 rv">Quando manter, <em>quando trocar</em></h3>
+ <table class="tbl resp rv"><thead><tr><th>Etapa</th><th>Sinal de vídeo bom</th><th>Sinal para trocar</th></tr></thead><tbody>${[['Topo','Custo por ThruPlay baixo, retenção alta nos 3 primeiros segundos, salvamentos','Retenção caindo e frequência alta'],['Meio','CTR de link alto e custo por visita à página baixo','Muitos cliques e pouca visita/permanência'],['Fundo','Custo por conversa no WhatsApp estável e conversas que viram provas agendadas','Custo por conversa subindo semana a semana']].map(r=>`<tr><td>${r[0]}</td><td data-l="Sinal de vídeo bom">${r[1]}</td><td data-l="Sinal para trocar">${r[2]}</td></tr>`).join('')}</tbody></table>
+</div></section>`;
+
+PANELS.checklists = ch('11','11 · Checklists','Antes de gravar e <em>antes de publicar</em>','Marque cada item. O progresso fica salvo neste aparelho.',2) + `
+<section class="sec"><div class="wrap"><div class="ckl">
+ ${[['g','Antes de gravar'],['p','Antes de publicar']].map(([k,t])=>`<div class="rv" data-ck="${k}"><div class="ckhead"><h4>${t}</h4><div class="ring"><svg viewBox="0 0 40 40"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><span>0/${CK[k].length}</span></div></div>${CK[k].map((x,i)=>`<div class="ck" data-i="${k}${i}"><span class="bx"></span><span class="tx">${x}</span></div>`).join('')}<button class="reset" data-reset="${k}">Limpar lista</button></div>`).join('')}
+</div></div></section>
+<section class="sec dark"><div class="wrap"><div class="eyebrow rv">Resumo em uma frase</div><p class="quote rv" style="margin-top:20px">Topo <em>encanta</em>, meio dá <em>segurança</em> e fundo <em>convida</em>.</p><p class="intro rv" style="margin-top:26px">Grave sempre pensando em qual dessas três coisas o vídeo precisa fazer e entregue ao tráfego em volume e com variações.</p></div></section>`;
+
+/* ============ BUILD ============ */
+const tabin=document.getElementById('tabin'), main=document.getElementById('main');
+TABS.forEach((t,i)=>{
+  const b=document.createElement('button');b.className='tab';b.dataset.t=t.id;b.innerHTML=`<b>${t.n}</b>${t.l}`;tabin.appendChild(b);
+  const s=document.createElement('div');s.className='panel';s.id='p-'+t.id;s.innerHTML=PANELS[t.id]+nextHTML(i);main.appendChild(s);
+});
+main.insertAdjacentHTML('beforeend',`<footer><span>Joyce Corse Moda Festa · Guia de Gravação</span><span>Mega Social Media · Novembro 2026</span><a href="https://www.instagram.com/joycecorse.modafesta/" target="_blank" rel="noopener">Instagram ↗</a></footer>`);
+
+/* ============ MOTION ============ */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+document.body.classList.remove('no-js'); if(reduce) document.body.classList.add('reduce');
+const hasG = typeof gsap!=='undefined';
+if(hasG) gsap.registerPlugin(ScrollTrigger);
+
+let lenis=null;
+if(!reduce && typeof Lenis!=='undefined'){
+  lenis=new Lenis({duration:1.25,easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),smoothWheel:true});
+  if(hasG){lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);}
+  else{const raf=t=>{lenis.raf(t);requestAnimationFrame(raf)};requestAnimationFrame(raf);}
+}
+const scrollTo=(y,imm)=>{ if(lenis) lenis.scrollTo(y,{immediate:!!imm,duration:1.4}); else window.scrollTo({top:y,behavior:imm?'auto':'smooth'}); };
+
+/* preloader */
+const pn=document.getElementById('pn'); pn.innerHTML=[...'JOYCE CORSE'].map(c=>`<span>${c===' '?'&nbsp;':c}</span>`).join('');
+function intro(){
+  if(!hasG||reduce){const p=document.getElementById('pre');p&&p.remove();document.querySelectorAll('.hero h1 .ln>span,.hero video,.hero .hp').forEach(e=>e.style.transform='none');return;}
+  const tl=gsap.timeline();
+  tl.to('#pn span',{y:0,duration:.8,stagger:.04,ease:'expo.out'})
+    .to('#pre .pl',{width:180,duration:.9,ease:'expo.inOut'},'-=.6')
+    .to('#pre .ps',{opacity:1,duration:.6},'-=.4')
+    .to('#pre .pw',{y:-30,opacity:0,duration:.5,ease:'power2.in'},'+=.15')
+    .to('#pre',{yPercent:-100,duration:1.1,ease:'expo.inOut'},'-=.15')
+    .to('.hero video,.hero .hp',{scale:1,duration:2.2,ease:'expo.out'},'-=.8')
+    .to('.hero h1 .ln>span',{y:0,duration:1.4,stagger:.12,ease:'expo.out'},'-=1.9')
+    .from('.hl-in, .hero .top',{opacity:0,y:20,duration:1,stagger:.1,ease:'power3.out'},'-=1.1')
+    .add(()=>document.getElementById('pre').remove());
+}
+
+/* hero parallax */
+if(hasG&&!reduce){
+  gsap.to('.hero .content',{yPercent:-30,opacity:0,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero video',{yPercent:18,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+}
+/* progress bar */
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('prog').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* per-panel animation */
+let triggers=[];
+function animatePanel(p){
+  triggers.forEach(t=>t.kill());triggers=[];
+  if(!hasG||reduce){p.querySelectorAll('.rv').forEach(e=>{e.style.opacity=1;e.style.transform='none'});
+    p.querySelectorAll('[data-w]').forEach(e=>e.style.width=e.dataset.w+'%');return;}
+  const bg=p.querySelector('.ch .bg');
+  if(bg) triggers.push(gsap.fromTo(bg,{yPercent:-6,scale:1.12},{yPercent:8,scale:1,ease:'none',scrollTrigger:{trigger:p.querySelector('.ch'),start:'top top',end:'bottom top',scrub:true}}).scrollTrigger);
+  const hd=p.querySelectorAll('.ch .rv'); gsap.set(hd,{opacity:0,y:50});
+  gsap.to(hd,{opacity:1,y:0,duration:1.3,stagger:.09,ease:'expo.out',delay:.15});
+  const rest=[...p.querySelectorAll('.rv')].filter(e=>!e.closest('.ch'));
+  gsap.set(rest,{opacity:0,y:40});
+  triggers.push(...ScrollTrigger.batch(rest,{start:'top 90%',once:true,onEnter:b=>gsap.to(b,{opacity:1,y:0,duration:1.1,stagger:.08,ease:'expo.out',overwrite:true})}));
+  p.querySelectorAll('.rimg').forEach(f=>{
+    const img=f.querySelector('img');
+    gsap.set(f,{clipPath:'inset(100% 0 0 0)'});
+    triggers.push(ScrollTrigger.create({trigger:f,start:'top 85%',once:true,onEnter:()=>gsap.to(f,{clipPath:'inset(0% 0 0 0)',duration:1.5,ease:'expo.inOut'})}));
+    triggers.push(gsap.fromTo(img,{yPercent:-8},{yPercent:0,ease:'none',scrollTrigger:{trigger:f.parentElement,start:'top bottom',end:'bottom top',scrub:true}}).scrollTrigger);
+  });
+  p.querySelectorAll('[data-w]').forEach(e=>{e.style.width=0;triggers.push(ScrollTrigger.create({trigger:e,start:'top 92%',once:true,onEnter:()=>gsap.to(e,{width:e.dataset.w+'%',duration:1.8,ease:'expo.out'})}))});
+  ScrollTrigger.refresh();
+}
+
+/* tabs */
+const ind=document.getElementById('ind'); let cur=null; const tabsY=()=>document.getElementById('top').offsetHeight;
+function moveInd(b){ind.style.left=b.offsetLeft+'px';ind.style.width=b.offsetWidth+'px';
+  const s=tabin; s.scrollTo({left:b.offsetLeft-s.clientWidth/2+b.offsetWidth/2,behavior:'smooth'});}
+function show(id,fromUser){
+  if(!PANELS[id]) id='funil';
+  if(cur===id){ if(fromUser) scrollTo(tabsY()); return; }
+  const next=document.getElementById('p-'+id), prev=cur&&document.getElementById('p-'+cur);
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.t===id));
+  moveInd(document.querySelector(`.tab[data-t="${id}"]`));
+  const go=()=>{
+    if(prev) prev.classList.remove('on');
+    next.classList.add('on');
+    if(fromUser){ const y=tabsY(); if(scrollY>y) scrollTo(y,true); }
+    if(hasG&&!reduce) gsap.fromTo(next,{opacity:0,filter:'blur(8px)'},{opacity:1,filter:'blur(0px)',duration:.9,ease:'power2.out',clearProps:'filter'});
+    animatePanel(next);
+  };
+  if(prev&&hasG&&!reduce) gsap.to(prev,{opacity:0,filter:'blur(8px)',duration:.4,ease:'power2.in',onComplete:()=>{gsap.set(prev,{clearProps:'all'});go()}});
+  else go();
+  cur=id;
+  if(fromUser) history.replaceState(null,'','#'+id);
+}
+tabin.addEventListener('click',e=>{const b=e.target.closest('.tab');if(b)show(b.dataset.t,true)});
+main.addEventListener('click',e=>{const n=e.target.closest('.next');if(n)show(n.dataset.go,true)});
+addEventListener('hashchange',()=>show(location.hash.slice(1),true));
+addEventListener('resize',()=>{const b=document.querySelector('.tab.on');if(b)moveInd(b)});
+
+/* caixinhas */
+main.addEventListener('click',e=>{
+  const c=e.target.closest('.chip');
+  if(c){document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));
+    const f=c.dataset.f, qs=[...document.querySelectorAll('.q')];
+    const vis=qs.filter(q=>f==='all'||q.dataset.c===f);
+    qs.forEach(q=>q.classList.toggle('hide',!vis.includes(q)));
+    if(hasG&&!reduce) gsap.fromTo(vis,{opacity:0,y:24},{opacity:1,y:0,duration:.8,stagger:.03,ease:'expo.out'});
+    if(hasG)ScrollTrigger.refresh(); return;}
+  const q=e.target.closest('.q');
+  if(q){ const t=q.dataset.q; (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).catch(()=>{}).finally(()=>{const ts=document.getElementById('toast');ts.classList.add('on');clearTimeout(ts._t);ts._t=setTimeout(()=>ts.classList.remove('on'),1600)});}
+});
+
+/* checklists (localStorage, opcional) */
+const LS='jc-ck'; let st={}; try{st=JSON.parse(localStorage.getItem(LS)||'{}')}catch(e){}
+function paintCk(){
+  document.querySelectorAll('.ck').forEach(c=>c.classList.toggle('done',!!st[c.dataset.i]));
+  document.querySelectorAll('[data-ck]').forEach(w=>{const k=w.dataset.ck,tot=CK[k].length,d=CK[k].filter((_,i)=>st[k+i]).length;
+    w.querySelector('.fg').style.strokeDashoffset=113.1*(1-d/tot);w.querySelector('.ring span').textContent=d+'/'+tot;});
+}
+main.addEventListener('click',e=>{
+  const c=e.target.closest('.ck'); if(c){st[c.dataset.i]=!st[c.dataset.i];try{localStorage.setItem(LS,JSON.stringify(st))}catch(_){}paintCk();return;}
+  const r=e.target.closest('[data-reset]'); if(r){Object.keys(st).forEach(k=>{if(k[0]===r.dataset.reset)delete st[k]});try{localStorage.setItem(LS,JSON.stringify(st))}catch(_){}paintCk();}
+});
+paintCk();
+
+/* lightbox */
+const lb=document.getElementById('lb'),lbi=document.getElementById('lbi'),lbc=document.getElementById('lbc'); let lbIdx=0;
+const CAP={1:'Alfaiataria com corpete estruturado e cristais',2:'Alfaiataria premium com pontos de luz em strass',3:'Um vestido para o pôr do sol',5:'O vestido do momento',7:'Não é apenas sobre o vestido',8:'O ateliê Joyce Corse',9:'Cravejado em cristais Swarovski',11:'Mãe de noiva, peça personalizada',26:'Recorte estratégico na cintura',27:'Clientes brilhando no evento',29:'Modelagem sereia com brilho efeito molhado',30:'Fenda lateral e espartilho nas costas',32:'Musseline fluida com capa'};
+function openLb(n){lbIdx=GAL.indexOf(+n);if(lbIdx<0)lbIdx=0;setLb();lb.classList.add('on');lenis&&lenis.stop();}
+function setLb(){const n=GAL[lbIdx];lbi.src=P(n);lbc.textContent=CAP[n]||'@joycecorse.modafesta';}
+function closeLb(){lb.classList.remove('on');lenis&&lenis.start();}
+document.addEventListener('click',e=>{const f=e.target.closest('[data-lb]');if(f)openLb(f.dataset.lb)});
+document.getElementById('lbx').onclick=closeLb;
+document.getElementById('lbn').onclick=e=>{e.stopPropagation();lbIdx=(lbIdx+1)%GAL.length;setLb()};
+document.getElementById('lbp').onclick=e=>{e.stopPropagation();lbIdx=(lbIdx-1+GAL.length)%GAL.length;setLb()};
+lb.addEventListener('click',e=>{if(e.target===lb)closeLb()});
+addEventListener('keydown',e=>{if(!lb.classList.contains('on'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowRight')document.getElementById('lbn').click();if(e.key==='ArrowLeft')document.getElementById('lbp').click();});
+
+/* cursor */
+const cu=document.getElementById('cur');
+if(matchMedia('(hover:hover)').matches&&!reduce){
+  let x=innerWidth/2,y=innerHeight/2,cx=x,cy=y;
+  addEventListener('mousemove',e=>{x=e.clientX;y=e.clientY});
+  (function loop(){cx+=(x-cx)*.18;cy+=(y-cy)*.18;cu.style.transform=`translate(${cx}px,${cy}px)`;requestAnimationFrame(loop)})();
+  document.addEventListener('mouseover',e=>cu.classList.toggle('big',!!e.target.closest('[data-lb]')));
+}
+
+/* video fallback */
+const hv=document.getElementById('hv'); hv.addEventListener('error',()=>hv.remove());
+const pp=hv.play&&hv.play(); if(pp&&pp.catch) pp.catch(()=>{});
+
+/* start */
+show(location.hash.slice(1)||'funil',false);
+let started=false;const start=()=>{if(started)return;started=true;intro()};
+(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>setTimeout(start,150));setTimeout(start,1800);
+setTimeout(()=>{const p=document.getElementById('pre');if(p&&!hasG)p.remove()},4000);
+</script>
+</body>
+</html>
