@@ -267,6 +267,20 @@ main{position:relative;min-height:100vh}
 .blocks .bt{height:3px;background:rgba(217,189,140,.15);margin-top:12px;position:relative}
 .blocks .bt i{position:absolute;inset:0 auto 0 0;background:var(--gold)}
 .blocks p{font-size:14.5px;color:rgba(248,243,236,.78)}
+.pers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.pers>div{border:1px solid var(--line);padding:32px 28px;background:var(--paper);transition:transform .8s var(--ease),border-color .6s}
+.pers>div:hover{transform:translateY(-6px);border-color:var(--gold)}
+.pers h5{font-family:var(--serif);font-size:30px;font-weight:400;margin-bottom:6px}
+.pers dt{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-top:18px}
+.pers dd{font-size:14.5px;margin:6px 0 0}
+.evts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(217,189,140,.18);margin-top:50px;border:1px solid rgba(217,189,140,.18)}
+.evts>div{background:var(--ink);padding:34px 28px}
+.evts b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:44px;color:var(--gold);display:block;line-height:1;margin-bottom:18px}
+.evts h5{font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:10px}
+.evts p{font-size:13.5px;color:rgba(248,243,236,.68)}
+.obs{font-size:13.5px;color:var(--mute);border-left:2px solid var(--gold);padding:4px 0 4px 14px;margin-top:18px;max-width:560px}
+.obs b{color:var(--ink);font-weight:500}
+.qset+.qset{margin-top:40px}
 .season{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
 .season div{padding:30px 26px;background:var(--cream);position:relative;overflow:hidden}
 .season h5{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1}
@@ -328,7 +342,8 @@ footer a{color:var(--gold2);text-decoration:none}
 
 @media (max-width:1000px){
   .fgrid{grid-template-columns:repeat(2,1fr)}
-  .princ{grid-template-columns:repeat(2,1fr)}
+  .princ,.evts{grid-template-columns:repeat(2,1fr)}
+  .pers{grid-template-columns:1fr 1fr}
   .hooks,.qgrid{grid-template-columns:repeat(2,1fr)}
   .week{grid-template-columns:repeat(4,1fr)}
   .stick{grid-template-columns:repeat(3,1fr)}
@@ -341,7 +356,7 @@ footer a{color:var(--gold2);text-decoration:none}
   .fstage{grid-template-columns:1fr;gap:16px}
   .fgrid{grid-template-columns:1fr 1fr;gap:18px}
   .callouts,.cols,.rules,.ckl,.season{grid-template-columns:1fr}
-  .princ{grid-template-columns:1fr}
+  .princ,.evts,.pers{grid-template-columns:1fr}
   .hooks,.qgrid{grid-template-columns:1fr}
   .rot,.rot:nth-of-type(even){grid-template-columns:1fr}
   .rot:nth-of-type(even) .rimg{order:0}
@@ -388,7 +403,7 @@ footer a{color:var(--gold2);text-decoration:none}
     <div class="eyebrow hl-in">Joyce Corse Moda Festa · Guia de Gravação</div>
     <h1><span class="ln"><span>Guia de Gravação</span></span><span class="ln"><span><em>de topo a fundo</em></span></span><span class="ln"><span><em>de funil</em></span></span></h1>
     <div class="sub hl-in">
-      <p>Roteiros, técnica de gravação, 50 ideias de caixinhas de pergunta e rotina de conteúdo para um ateliê de aluguel de vestidos de alto padrão.</p>
+      <p>Roteiros, técnica de gravação, 50 ideias de caixinhas de pergunta, rotina de conteúdo e um capítulo especial para formandas para um ateliê de aluguel de vestidos de alto padrão.</p>
       <div class="scroll-ind"><span></span>ROLE</div>
     </div>
   </div>
@@ -546,11 +561,84 @@ const CK = {
  p:['Gancho forte no primeiro frame','Cortes sem pausas e respirações','Legenda revisada (sem erros de português)','Texto dentro da área segura','CTA claro no final (falado e escrito)','Capa do Reels bonita e coerente com o feed','Legenda do post com pergunta ou CTA','Música adequada (licenciada se for para anúncio)','Versão sem música enviada ao tráfego','Arquivo nomeado no padrão','Link do WhatsApp funcionando','Story de divulgação do Reels publicado']
 };
 
+/* ============ FORMANDAS (capítulo especial) ============ */
+const FR = [
+ {n:'F01',t:'Formatura são três eventos',f:'Topo · Reels / Carrossel',img:9,o:'Mostrar que a formatura pede mais de um look e posicionar o aluguel como a escolha natural.',g:'“Formatura não é uma festa. São três. E você não vai repetir vestido em nenhuma.”',
+  r:['Colação de grau: vestido discreto e elegante, que aparece quando a beca abre (1 peça).','Culto ou missa: comprimento e decote mais fechados, tons suaves (1 peça).','Baile: a peça protagonista, com brilho, fenda ou cor forte (1 peça girando).','Fechamento: “Três looks, e nenhum parado no armário depois.”'],
+  k:['Três peças lado a lado na arara, depois uma por vez vestida.','Texto na tela com o nome de cada evento.','Giro em câmera lenta só no look do baile.'],
+  c:'“Formanda? Agende sua prova e monte os três looks de uma vez.”',d:'20–35s'},
+ {n:'F02',t:'POV: a prova do vestido do baile',f:'Topo · Reels',img:12,o:'Emoção e identificação: a formanda se coloca no lugar da cliente.',g:'“POV: você estudou cinco anos para chegar nesse provador.”',
+  r:['Formanda chegando ao ateliê (de costas ou com autorização).','Cortes rápidos dos vestidos sendo separados na arara.','Cortina do provador abrindo: primeira vez com o vestido do baile.','Reação real dela e de quem está junto (mãe, amigas).'],
+  k:['Plano fixo na cortina do provador (o momento da revelação).','Close da reação, sem roteiro: deixe acontecer.','Detalhes: mãos fechando o zíper, ajuste da alça, sapato.'],
+  c:'“Sua vez de viver esse provador — agende pelo WhatsApp.”',d:'15–25s'},
+ {n:'F03',t:'O vestido que aparece na foto do baile',f:'Topo · Reels / Carrossel',img:16,o:'Conteúdo educativo com alto potencial de salvamento: escolher pensando na foto noturna.',g:'“Esse vestido é lindo pessoalmente e some na foto do baile. Esse aqui, não.”',
+  r:['Comparar duas peças sob luz baixa e flash (simulando o salão do baile).','Explicar o que funciona: cor saturada, brilho e contraste com a decoração e o fundo escuro.','O que evitar: tons que se confundem com a pele ou com a decoração.','Dica final: perguntar à comissão a cor da decoração antes da prova.'],
+  k:['Ambiente escuro com uma luz pontual + flash do celular.','Mesma pose com as duas peças (antes x depois).','Joyce comentando em plano médio.'],
+  c:'“Salva e manda no grupo da turma.”',d:'25–40s'},
+ {n:'F04',t:'Ninguém da turma com o mesmo vestido',f:'Topo · Reels',img:14,o:'Atacar o maior medo da formanda e reforçar a exclusividade.',g:'“O pesadelo de toda formanda: chegar no baile e ver uma colega com o mesmo vestido.”',
+  r:['Encenar o susto (duas amigas se olhando, corte seco).','Joyce explica como o ateliê evita isso na reserva (data, evento, turma).','Variedade do acervo de formatura em cortes rápidos.','Fechamento: “Aqui, o seu vestido é só seu naquela noite.”'],
+  k:['Duas modelos/colaboradoras com o mesmo vestido (cena de abertura).','Joyce na frente da arara.','Giros de 1–2s de várias peças.'],
+  c:'“Conte a data e a turma no WhatsApp e reserve o seu.”',d:'20–30s',x:'Só grave se o ateliê realmente controla a reserva por evento/turma. Promessa de exclusividade que falha uma vez queima a turma inteira.'},
+ {n:'F05',t:'Mãe de formanda também se forma',f:'Meio · Reels',img:11,o:'Falar com quem normalmente decide e paga, e abrir um segundo aluguel na mesma família.',g:'“Mãe de formanda: você também passou por essa faculdade inteira.”',
+  r:['Mãe e filha no ateliê, cada uma provando o seu vestido.','Dica da Joyce para a mãe: elegância sem competir com a formanda (tons, comprimento, mangas).','As duas lado a lado no espelho.','Fechamento emotivo: a foto das duas no baile.'],
+  k:['Plano aberto do espelho com as duas.','Close das mãos (mãe arrumando o cabelo ou o colar da filha).','Foto real do baile enviada por cliente (com autorização).'],
+  c:'“Mãe e filha: agende uma prova juntas.”',d:'20–35s'},
+ {n:'F06',t:'Prova com as amigas da turma',f:'Topo · Reels / Stories',img:22,o:'Gerar compartilhamento dentro da turma e trazer várias formandas na mesma visita.',g:'“Marca as amigas que vão dividir a mesa do baile com você.”',
+  r:['Grupo de amigas chegando ao ateliê.','Cada uma escolhe e prova o seu: cortes rápidos com a reação das outras.','Votação entre elas (“esse ou esse?”).','Final: todas juntas no espelho, cada uma com um vestido diferente.'],
+  k:['Plano aberto do grupo.','Reações em close.','Texto na tela com a votação.'],
+  c:'“Vem com a turma: agende a prova do grupo pelo WhatsApp.”',d:'20–30s'},
+ {n:'F07',t:'O baile vai até as cinco da manhã',f:'Meio · Reels',img:28,o:'Quebrar a objeção de conforto e mostrar o ajuste como diferencial.',g:'“O baile vai até as cinco da manhã. Seu vestido aguenta?”',
+  r:['Teste na prova: sentar, levantar os braços, dançar, subir escada.','Joyce mostra o ajuste que garante isso (alça, barbatana, bainha na altura do salto).','Dica: provar com o sapato do baile.','Formanda dançando no ateliê como prova final.'],
+  k:['Formanda dançando em plano aberto.','Macro do ajuste e dos alfinetes.','Sapato e bainha em close.'],
+  c:'“Na prova, a gente ajusta para você dançar a noite inteira.”',d:'20–30s'},
+ {n:'F08',t:'Quando escolher o vestido de formatura',f:'Meio · Reels / Carrossel',img:15,o:'Educar sobre antecedência e trazer a formanda para a prova no tempo certo.',g:'“Formatura em janeiro? Este é o mês certo para escolher o vestido.”',
+  r:['Linha do tempo simples: escolher, provar, ajustar, retirar.','Por que deixar para a última semana limita as opções (peças já reservadas para a data).','Quando trazer o sapato e os acessórios.','Convite: “Me fala a data que eu te digo se ainda está no prazo.”'],
+  k:['Joyce falando + texto na tela com cada etapa.','Inserts: agenda, provador, costura, retirada.'],
+  c:'“Mande a data do seu baile no WhatsApp.”',d:'25–40s',x:'Troque o mês do gancho conforme a data de publicação.'},
+ {n:'F09',t:'Por baixo da beca',f:'Topo · Reels',img:25,o:'Ângulo pouco explorado: o look da colação também aparece.',g:'“O que vai por baixo da beca também aparece na foto do diploma.”',
+  r:['Formanda com a beca fechada; abre a beca e revela o vestido.','Dica: comprimento e decote que funcionam com a beca e com a faixa.','Tecidos que não amassam durante a cerimônia.','Mesmo vestido sem a beca, de corpo inteiro.'],
+  k:['Beca (ou capa preta) para a cena de abertura.','Plano médio na revelação.','Detalhe do decote com a faixa.'],
+  c:'“Colação chegando? Agende a prova do seu look.”',d:'15–25s'},
+ {n:'F10',t:'Formanda no baile (prova social)',f:'Meio · Reels / Anúncio Site',img:27,o:'Mostrar o resultado real e criar desejo na próxima turma.',g:'“Ela escolheu esse vestido aqui no ateliê. Olha como ficou no baile.”',
+  r:['Vídeo ou foto da prova no ateliê.','Corte para ela no baile (vídeo enviado pela cliente).','Frase dela sobre a noite (áudio ou texto na tela).','Agradecimento e convite para a próxima turma.'],
+  k:['Pedir na retirada: “Manda um vídeo seu dançando no baile!”.','Guardar o vídeo da prova de cada formanda para montar o antes e depois.','Autorização de uso de imagem por escrito.'],
+  c:'“Formanda 2027? A próxima pode ser você.”',d:'15–30s'},
+ {n:'F11',t:'Turmas de dezembro: datas reservadas',f:'Fundo · RMKT / Stories',img:30,o:'Urgência legítima no pico da temporada.',g:'“Turmas de dezembro: estes são os vestidos que ainda estão livres para a sua data.”',
+  r:['Arara com etiquetas de “reservado” em close.','Peças ainda disponíveis, uma a uma.','Chamada para consultar a disponibilidade da data.'],
+  k:['Etiquetas reais de reserva.','Giro rápido das peças livres.'],
+  c:'“Mande a data do seu baile e consulte a disponibilidade.”',d:'10–20s',x:'Só grave com reservas reais. Escassez falsa destrói a confiança de cliente de alto padrão.'},
+ {n:'F12',t:'Convite da Joyce para formandas',f:'Fundo · Anúncio RMKT WhatsApp',img:33,o:'Converter a formanda que já conhece o ateliê.',g:'“Se você se forma até fevereiro, este vídeo é para você.”',
+  r:['Joyce olhando para a lente, sem rodeio.','O que acontece na prova da formanda: vários modelos, os três looks, ajuste e acessórios.','Como agendar: um clique no botão do WhatsApp.'],
+  k:['Joyce em plano médio.','Insert do provador e da arara de formatura.'],
+  c:'“Clique no botão e agende sua prova de formanda.”',d:'15–25s'}
+];
+
+const FG = [
+ {c:'Identificação',s:'fala com a formanda',q:['Você estudou cinco anos para essa noite. O vestido não pode ser escolhido em cinco minutos.','Formanda 2026/27, este vídeo é seu.','Se você vai se formar e ainda não pensou no vestido, assiste até o final.','A única noite em que a turma inteira vai estar arrumada ao mesmo tempo.','Você só se forma uma vez. A foto vai para a parede para sempre.','Comissão de formatura, este vídeo é para mandar no grupo.']},
+ {c:'Erro e alerta',s:'gera salvamento',q:['3 erros que fazem o vestido de formatura sumir nas fotos.','Não escolha o vestido do baile antes de saber a cor da decoração.','O erro que faz a formanda passar o baile inteiro sentada.','Pare de escolher o vestido do baile só pelo Pinterest.','Vestido de formatura não se prova sem o sapato do baile.']},
+ {c:'Curiosidade',s:'segura até o fim',q:['O detalhe que separa o vestido de formatura do vestido de convidada.','O que vai por baixo da beca também aparece na foto.','O que o fotógrafo do baile queria que você soubesse antes de escolher o vestido.','Por que tantas formandas alugam em vez de comprar o vestido do baile.','Brilho ou cetim: qual aparece melhor na foto do baile?']},
+ {c:'Visual (sem fala)',s:'para anúncio ThruPlay',q:['Primeiro frame: a cortina do provador abrindo e a formanda já vestida.','Close do brilho do tecido; corte seco para o corpo inteiro girando.','A beca abrindo e revelando o vestido.','Formanda caminhando para a câmera em câmera lenta, contra-luz.']},
+ {c:'Mãe e família',s:'fala com quem decide',q:['Mãe de formanda: este vídeo é para mandar para a sua filha.','Mãe de formanda também se forma.','Mãe e filha no mesmo provador: a prova mais emocionante da semana.','Quem cuida de tudo da formatura também merece cuidar do próprio vestido.']},
+ {c:'Turma e amigas',s:'gera compartilhamento',q:['Marca as amigas que vão dividir a mesa do baile com você.','O pesadelo da formanda: uma colega com o mesmo vestido.','Quatro amigas, quatro vestidos, um baile.','Prova em grupo: cada amiga sai com um vestido diferente.']},
+ {c:'Calendário',s:'só quando for real',q:['Formatura em dezembro? Veja os vestidos que ainda estão livres para a sua data.','Turmas de janeiro e fevereiro já estão marcando a prova. Quando é o seu baile?','Me fala a data do seu baile que eu digo se você ainda está no prazo.','Os vestidos de formatura mais pedidos são os primeiros a ter a data reservada.']}
+];
+
+const FC = [
+ {c:'Qualificam',s:'revelam quem está perto de agendar',q:['Qual é a data do seu baile? Te digo se ainda dá tempo.','Qual é o seu curso? Medicina, Direito, Engenharia…','Sua formatura é de faculdade ou de ensino médio?','Quantos eventos você vai ter: colação, culto, baile?','Qual é a cor da decoração do seu baile?','Já tem o sapato do baile ou vamos escolher junto?']},
+ {c:'Estilo',s:'viram respostas em vídeo',q:['Descreva o vestido dos seus sonhos para o baile em 3 palavras.','Brilho, cetim ou renda: qual é a sua cara para o baile?','Fenda, costas nuas ou decote: qual vai ser o seu destaque?','Qual cor você quer na foto que vai para a parede?','Manda o print do vestido do feed que você usaria no baile.']},
+ {c:'Enquetes e quiz',s:'engajamento rápido',q:['Enquete: longo ou midi para a colação?','Enquete: qual desses dois para o baile?','Quiz: o que aparece melhor na foto noturna? (brilho / tecido opaco)','Enquete: você vai provar com a mãe ou com as amigas?','Controle deslizante: quão ansiosa você está para o baile?']},
+ {c:'Relacionamento',s:'conexão e prova social',q:['Qual é o seu maior medo para o dia do baile?','Conta: qual foi o momento mais difícil da faculdade?','Marca a amiga que vai dançar com você até o fim do baile.','Formanda: manda uma foto sua no baile com o nosso vestido!']}
+];
+
+const qBtns = (G,pre) => { let i=0; return G.map((g,gi)=>g.q.map(q=>{i++;return `<button class="q" data-c="${pre}${gi}" data-q="${q.replace(/"/g,'&quot;')}"><span class="qn">${String(i).padStart(2,'0')}</span><span class="qt">${q}</span><span class="qc">${g.c} · ${g.s}</span><span class="cp">Copiar</span></button>`}).join('')).join(''); };
+const qSet = (G,pre) => `<div class="qset"><div class="chips rv"><button class="chip on" data-f="all">Todas <small>${G.reduce((a,g)=>a+g.q.length,0)}</small></button>${G.map((g,i)=>`<button class="chip" data-f="${pre}${i}">${g.c} <small>${g.q.length}</small></button>`).join('')}</div><div class="qgrid">${qBtns(G,pre)}</div></div>`;
+
 const TABS = [
  {id:'funil',n:'01',l:'Funil'},{id:'preparacao',n:'02',l:'Preparação'},{id:'tecnica',n:'03',l:'Técnica'},
  {id:'topo',n:'04',l:'Topo'},{id:'meio',n:'05',l:'Meio'},{id:'fundo',n:'06',l:'Fundo'},
- {id:'stories',n:'07',l:'Stories'},{id:'caixinhas',n:'08',l:'Caixinhas'},{id:'producao',n:'09',l:'Produção'},
- {id:'trafego',n:'10',l:'Tráfego pago'},{id:'checklists',n:'11',l:'Checklists'}
+ {id:'formandas',n:'07',l:'Formandas ✦'},
+ {id:'stories',n:'08',l:'Stories'},{id:'caixinhas',n:'09',l:'Caixinhas'},{id:'producao',n:'10',l:'Produção'},
+ {id:'trafego',n:'11',l:'Tráfego pago'},{id:'checklists',n:'12',l:'Checklists'}
 ];
 
 /* ============ TEMPLATES ============ */
@@ -564,7 +652,8 @@ const rotHTML = r => `<article class="rot">
     <p class="obj rv"><b>Objetivo:</b> ${r.o}</p>
     <div class="gancho rv"><h6>GANCHO (0–3S)</h6><p>${r.g}</p></div>
     <div class="rgrid rv"><div><h6>Roteiro</h6><ol>${r.r.map(x=>`<li>${x}</li>`).join('')}</ol></div><div><h6>Takes para gravar</h6><ul>${r.k.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
-    <div class="rfoot rv"><span><b>CTA:</b> ${r.c}</span><span class="dur">${r.d}</span></div>
+    <div class="rfoot rv"><span><b>CTA:</b> ${r.c}</span><span class="dur">${r.d}</span></div>${r.x?`
+    <p class="obs rv"><b>Atenção:</b> ${r.x}</p>`:''}
   </div></article>`;
 const nextHTML = i => i<TABS.length-1 ? `<div class="next" data-go="${TABS[i+1].id}"><div><small>Próximo capítulo · ${TABS[i+1].n}</small><h4>${TABS[i+1].l}</h4></div><span class="arr">→</span></div>` : `<div class="next" data-go="funil"><div><small>Voltar ao início</small><h4>Como o funil funciona</h4></div><span class="arr">↑</span></div>`;
 
@@ -632,7 +721,54 @@ PANELS.fundo = ch('06','06 · Fundo de funil','Roteiros de <em>conversão</em>',
 <section class="sec" style="padding-bottom:0"><div class="wrap"><div class="call rv" style="background:var(--cream)"><h4>Regras do fundo de funil</h4>${ul(['Uma única chamada para ação por vídeo (“Clique e agende sua prova”).','CTA falado <b>e</b> escrito na tela nos últimos 3 segundos.','Escassez apenas quando for real (datas e peças de fato reservadas). Escassez falsa destrói a confiança de cliente de alto padrão.','Renovar os vídeos de fundo a cada 3–4 semanas.'])}</div></div></section>
 <section class="sec" style="padding-top:40px"><div class="wrap">${ROT.fundo.map(rotHTML).join('')}</div></section>`;
 
-PANELS.stories = ch('07','07 · Stories','Rotina diária <em>de Stories</em>','Stories não precisam de produção. Eles mantêm a audiência quente, alimentam o fundo de funil e geram conversas no WhatsApp. A meta é uma sequência de 6 a 10 stories por dia, distribuídos ao longo do dia.',10,'Sequência pronta') + `
+PANELS.formandas = ch('07','07 · Especial formandas','O vestido da foto <em>que vai para a parede</em>','Formatura é a temporada mais forte do ateliê (outubro a fevereiro) e a formanda é uma cliente diferente: tem mais de um evento, decide junto com a mãe e com as amigas e tem medo de repetir o vestido de alguém da turma. Este capítulo reúne tudo para gravar para ela: perfis, eventos, ganchos, roteiros, caixinhas, stories e o atendimento no WhatsApp.',19,'12 roteiros · 32 ganchos · 20 caixinhas') + `
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Para quem você está gravando</div><h3 class="h3 rv">Uma formatura, <em>três decisoras</em></h3>
+ <div class="pers">${[['A formanda','Ser a mais bonita da foto, não repetir look e dançar a noite inteira.','Medo de chegar ao baile com o mesmo vestido de uma colega; deixar tudo para a última hora.','Emoção, foto, exclusividade, conforto.'],
+   ['A mãe','Ver a filha impecável e estar elegante também, sem competir com ela.','Higiene, ajuste, segurança da reserva e quem vai atender.','Processo, cuidado, atendimento da Joyce. Muitas vezes é ela quem paga.'],
+   ['A turma','Resolver junto, com as amigas, e cada uma com o seu vestido.','Agenda de muita gente ao mesmo tempo.','Prova em grupo, compartilhamento, “marca a amiga”.']
+  ].map(p=>`<div class="rv"><h5>${p[0]}</h5><dl><dt>O que ela quer</dt><dd>${p[1]}</dd><dt>O que trava</dt><dd>${p[2]}</dd><dt>Como falar com ela</dt><dd>${p[3]}</dd></dl></div>`).join('')}</div>
+</div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="eyebrow rv">A jornada da formanda</div><h3 class="h3 rv">Não é um vestido. <em>São até quatro looks.</em></h3>
+ <div class="evts">${[['01','Colação de grau','Discreto e elegante. Aparece quando a beca abre e na foto com o diploma. Tecido que não amassa durante a cerimônia.'],['02','Culto ou missa','Mais recatado: mangas ou costas fechadas, comprimento midi ou longo, tons suaves.'],['03','Baile','O protagonista. Brilho, fenda ou cor forte que aparece na foto noturna, e ajuste que aguenta horas de dança.'],['04','Ensaio de formatura','Fotos de turma ou ensaio individual, geralmente com luz do dia. Cor e tecido que funcionam ao ar livre.']].map(e=>`<div class="rv"><b>${e[0]}</b><h5>${e[1]}</h5><p>${e[2]}</p></div>`).join('')}</div>
+ <p class="intro rv" style="margin-top:30px;color:rgba(248,243,236,.75)">Cada evento é um aluguel. Na prova, apresente os looks juntos: a formanda que veio pelo baile pode sair com a colação e o culto resolvidos.</p>
+</div></section>
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Banco de ganchos</div><h3 class="h3 rv">32 ganchos <em>para os 3 primeiros segundos</em></h3>
+ <p class="intro rv">Toque num gancho para copiar. Cada roteiro abaixo funciona com vários deles: grave 2–3 ganchos diferentes para o mesmo vídeo e deixe o tráfego testar.</p>
+ ${qSet(FG,'g')}
+</div></section>
+<section class="sec alt" style="padding-bottom:0"><div class="wrap">
+ <div class="eyebrow rv">Roteiros</div><h3 class="h3 rv">12 roteiros <em>de topo a fundo</em></h3>
+ <p class="intro rv">Proporção sugerida para a temporada: 5 de topo (F01, F02, F03, F04, F06, F09), 3 de meio (F05, F07, F08, F10) e 2 de fundo (F11, F12). Escolha os que fazem mais sentido para a semana.</p>
+</div></section>
+<section class="sec alt" style="padding-top:20px"><div class="wrap">${FR.map(rotHTML).join('')}</div></section>
+<section class="sec"><div class="wrap">
+ <div class="eyebrow rv">Caixinhas para formandas</div><h3 class="h3 rv">20 perguntas <em>que qualificam a formanda</em></h3>
+ <p class="intro rv">Quem responde com a data do baile e o curso já é uma cliente em potencial: chame no direct com uma mensagem personalizada.</p>
+ ${qSet(FC,'c')}
+</div></section>
+<section class="sec alt"><div class="wrap">
+ <div class="eyebrow rv">Stories na temporada</div><h3 class="h3 rv">Um dia de stories <em>para formandas</em></h3>
+ <div class="tl">${[['Manhã','Arara de formatura sendo montada + “Hoje é dia de prova de formanda”.','Desejo'],['Meio da manhã','Enquete com dois vestidos de baile.','Interação'],['Almoço','Caixinha de formanda (acima).','Qualificação'],['Tarde','Bastidor de prova de formanda (com autorização): cortina abrindo, reação, mãe ou amigas.','Experiência'],['Fim da tarde','Respostas da caixinha em vídeo, com a peça na mão.','Autoridade'],['Noite','Formanda no baile (vídeo de cliente) + figurinha de link do WhatsApp.','Conversão']].map(t=>`<div class="tli rv"><div class="tm">${t[0]}</div><div><p>${t[1]}</p></div><div class="ob">${t[2]}</div></div>`).join('')}</div>
+ <div class="hl rv" style="margin-top:50px">${[['Formandas',27],['Baile',9],['Colação',25],['Mãe & filha',11]].map(h=>`<div class="hlc"><span><i><img src="${P(h[1])}" alt=""></i></span>${h[0]}</div>`).join('')}</div>
+ <p class="intro rv" style="margin-top:26px">Crie o destaque <b>Formandas</b> entre <b>Acervo</b> e <b>Clientes</b> durante a temporada e alimente com cada formanda no baile.</p>
+</div></section>
+<section class="sec"><div class="wrap"><div class="cols">
+ <div class="blk rv"><h4>Atendimento no WhatsApp</h4><p style="font-size:14.5px">Mensagem pronta no link dos anúncios e stories de formanda:</p>
+  <div class="code"><span class="k">“Oi, Joyce! Sou formanda e quero agendar minha prova. Meu baile é dia ___.”</span></div>
+  <p style="font-size:14.5px;margin-top:22px">Perguntas da primeira resposta (para chegar à prova já sabendo o que separar):</p>
+  ${ul(['Qual é a data do baile? E da colação e do culto?','Qual é o curso e a cidade da formatura?','Qual é a cor da decoração do baile?','Vem sozinha, com a mãe ou com as amigas?','Já tem sapato? Se tiver, traga na prova.'])}</div>
+ <div class="blk rv"><h4>Dia de gravação para formandas</h4>${ul(['Beca ou capa preta para os vídeos de colação (F09).','Arara só com peças de formatura, organizada por cor.','Luz baixa + um ponto de luz para simular o salão do baile (F03).','Etiquetas de “reservado” reais para o F11.','Autorização de imagem assinada (pelo responsável, se a formanda for menor de idade).','Gravar a cortina do provador de toda formanda que autorizar (F02 e F10).','Na retirada, pedir: “Manda um vídeo seu dançando no baile!”.'])}</div>
+</div></div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="eyebrow rv">Calendário da temporada</div><h3 class="h3 rv">O que gravar <em>em cada fase</em></h3>
+ <div class="stick">${[['Ago–Set','Planejamento: os três eventos, cores para foto, tendências. Muito topo (F01, F03, F09).'],['Outubro','Escolha: POV da prova, amigas, mãe e filha, conforto (F02, F05, F06, F07).'],['Novembro','Reserva: antecedência, convite da Joyce, datas reservadas reais (F08, F11, F12).'],['Dez–Fev','Bailes: vídeos das clientes no baile e compilados (F10). Vira prova social da próxima turma.'],['Agora','Turmas de dezembro: fundo (F11, F12). Turmas de jan/fev: F01 a F08. Recolher vídeos de cada baile.']].map(s=>`<div class="rv"><h5>${s[0]}</h5><p>${s[1]}</p></div>`).join('')}</div>
+</div></section>
+<section class="sec"><div class="wrap"><div class="call rv"><h4>Regras do capítulo formandas</h4>${ul(['CTA de todos os vídeos: <b>agendar a prova pelo WhatsApp</b>.','Exclusividade, nunca preço: nada de “promoção de formatura” ou “desconto de turma”. Se houver condição para grupo, apresente como <b>atendimento exclusivo para a turma</b>.','Exclusividade por turma e escassez de datas só quando forem reais.','Formanda menor de idade (ensino médio): autorização de imagem assinada pelo responsável.','Grave com 4–6 semanas de antecedência da data de publicação.'])}</div></div></section>`;
+
+PANELS.stories = ch('08','08 · Stories','Rotina diária <em>de Stories</em>','Stories não precisam de produção. Eles mantêm a audiência quente, alimentam o fundo de funil e geram conversas no WhatsApp. A meta é uma sequência de 6 a 10 stories por dia, distribuídos ao longo do dia.',10,'Sequência pronta') + `
 <section class="sec"><div class="wrap">
  <div class="eyebrow rv">Um dia de stories</div><h3 class="h3 rv">Do bom dia <em>à figurinha de link</em></h3>
  <div class="tl">${[['Manhã','Abertura do ateliê, café, araras sendo organizadas. Joyce dando bom dia e contando o que vai acontecer no dia.','Presença e rotina'],['Meio da manhã','Peça do dia em destaque (vídeo de 10s + enquete “usaria?”).','Desejo + interação'],['Almoço','Caixinha de pergunta do dia (veja a aba Caixinhas).','Gerar dúvidas para responder'],['Tarde','Bastidor de prova ou ajuste (com autorização), vaporização, embalagem para retirada.','Prova de operação'],['Fim da tarde','Respostas das caixinhas em vídeo, com a peça na mão.','Autoridade e quebra de objeção'],['Noite','Print/vídeo de cliente no evento + figurinha de link do WhatsApp.','Prova social + conversão']].map(t=>`<div class="tli rv"><div class="tm">${t[0]}</div><div><p>${t[1]}</p></div><div class="ob">${t[2]}</div></div>`).join('')}</div>
@@ -648,14 +784,14 @@ PANELS.stories = ch('07','07 · Stories','Rotina diária <em>de Stories</em>','S
 </div></section>`;
 
 let qi=0;
-PANELS.caixinhas = ch('08','08 · Interação','50 ideias de <em>caixinhas de pergunta</em>','Caixinhas geram conversa, revelam objeções e qualificam quem está perto de agendar. As respostas viram conteúdo pronto para stories e até para Reels.',33,'Toque numa pergunta para copiar') + `
+PANELS.caixinhas = ch('09','09 · Interação','50 ideias de <em>caixinhas de pergunta</em>','Caixinhas geram conversa, revelam objeções e qualificam quem está perto de agendar. As respostas viram conteúdo pronto para stories e até para Reels.',33,'Toque numa pergunta para copiar') + `
 <section class="sec"><div class="wrap">
- <div class="chips rv" id="chips"><button class="chip on" data-f="all">Todas <small>50</small></button>${CX.map((g,i)=>`<button class="chip" data-f="${i}">${g.c} <small>${g.q.length}</small></button>`).join('')}</div>
- <div class="qgrid" id="qgrid">${CX.map((g,i)=>g.q.map(q=>{qi++;return `<button class="q" data-c="${i}" data-q="${q.replace(/"/g,'&quot;')}"><span class="qn">${String(qi).padStart(2,'0')}</span><span class="qt">${q}</span><span class="qc">${g.c} · ${g.s}</span><span class="cp">Copiar</span></button>`}).join('')).join('')}</div>
+ <div class="qset"><div class="chips rv" id="chips"><button class="chip on" data-f="all">Todas <small>50</small></button>${CX.map((g,i)=>`<button class="chip" data-f="${i}">${g.c} <small>${g.q.length}</small></button>`).join('')}</div>
+ <div class="qgrid" id="qgrid">${CX.map((g,i)=>g.q.map(q=>{qi++;return `<button class="q" data-c="${i}" data-q="${q.replace(/"/g,'&quot;')}"><span class="qn">${String(qi).padStart(2,'0')}</span><span class="qt">${q}</span><span class="qc">${g.c} · ${g.s}</span><span class="cp">Copiar</span></button>`}).join('')).join('')}</div></div>
  <div class="call rv" style="margin-top:60px;background:var(--cream)"><h4>Como responder as caixinhas</h4>${ul(['Responda <b>em vídeo</b>, com a Joyce falando e, sempre que possível, mostrando uma peça que resolva a dúvida.','Toda resposta que indicar um vestido termina com figurinha de link para o WhatsApp.','Quem responder com data e tipo de evento é uma cliente em potencial: chame no direct com uma mensagem personalizada.','As 3 melhores perguntas da semana viram Reels de meio de funil.','Salve as respostas no destaque “Dúvidas”.'])}</div>
 </div></section>`;
 
-PANELS.producao = ch('09','09 · Produção','Calendário e <em>dia de gravação</em>','Gravar um pouco todo dia cansa e gera conteúdo inconsistente. O ideal é reservar um período por semana só para gravar (produção em lote) e, no dia a dia, apenas os stories.',16,'Produção em lote') + `
+PANELS.producao = ch('10','10 · Produção','Calendário e <em>dia de gravação</em>','Gravar um pouco todo dia cansa e gera conteúdo inconsistente. O ideal é reservar um período por semana só para gravar (produção em lote) e, no dia a dia, apenas os stories.',16,'Produção em lote') + `
 <section class="sec dark"><div class="wrap">
  <div class="eyebrow rv">Roteiro do dia de gravação</div><h3 class="h3 rv">4 horas, <em>cinco blocos</em></h3>
  <div class="blocks">${[[30,'Preparação: vaporizar as peças, montar os 3 cenários, testar luz e áudio, limpar a lente.'],[60,'Vídeos de fala da Joyce (meio e fundo): gravar todos seguidos, mesma roupa e mesmo cenário, trocando apenas o enquadramento.'],[60,'Vídeos de peça (topo): giros, câmera lenta, transformação no espelho, detalhes em macro.'],[45,'B-roll: araras, mãos, ajuste, embalagem, ateliê, fachada. Gravar tudo que puder virar insert.'],[15,'Organização: renomear arquivos e enviar para a pasta compartilhada com o editor/gestor.']].map(b=>`<div class="rv"><b>${b[0]}<small> min</small></b><div><p>${b[1]}</p><div class="bt"><i data-w="${b[0]/60*100}"></i></div></div></div>`).join('')}</div>
@@ -667,7 +803,7 @@ PANELS.producao = ch('09','09 · Produção','Calendário e <em>dia de gravaçã
  <div class="season">${[['Out–fev','Formaturas e casamentos de fim de ano. Reforce formatura e escassez de datas.'],['Mar–jun','Casamentos de outono e 15 anos.'],['Jul–set','Casamentos de inverno e planejamento da temporada seguinte.']].map(s=>`<div class="rv"><h5>${s[0]}</h5><p>${s[1]}</p></div>`).join('')}</div>
 </div></section>`;
 
-PANELS.trafego = ch('10','10 · Tráfego pago','Entrega dos vídeos <em>para anúncios</em>','Formatos, nomes de arquivo e especificações para o gestor de tráfego montar as campanhas sem retrabalho.',29) + `
+PANELS.trafego = ch('11','11 · Tráfego pago','Entrega dos vídeos <em>para anúncios</em>','Formatos, nomes de arquivo e especificações para o gestor de tráfego montar as campanhas sem retrabalho.',29) + `
 <section class="sec"><div class="wrap">
  <div class="eyebrow rv">Especificações técnicas</div><h3 class="h3 rv">O <em>padrão</em> de entrega</h3>
  <table class="tbl rv"><thead><tr><th>Item</th><th>Padrão</th></tr></thead><tbody>${[['Formato principal','Vertical 9:16 · 1080×1920 px (Reels e Stories)'],['Formato secundário','4:5 · 1080×1350 px (feed): deixe espaço nas laterais ao gravar para permitir o corte'],['Duração','Topo: 8–30s · Meio: 20–60s · Fundo: 10–30s'],['Arquivo','MP4 (H.264), sem marca d\'água de aplicativos de edição'],['Versões','Com legenda e sem legenda · com música e sem música'],['Áreas seguras','Nada importante nos 14% superiores e 35% inferiores da tela']].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table>
@@ -682,7 +818,7 @@ PANELS.trafego = ch('10','10 · Tráfego pago','Entrega dos vídeos <em>para an�
  <table class="tbl resp rv"><thead><tr><th>Etapa</th><th>Sinal de vídeo bom</th><th>Sinal para trocar</th></tr></thead><tbody>${[['Topo','Custo por ThruPlay baixo, retenção alta nos 3 primeiros segundos, salvamentos','Retenção caindo e frequência alta'],['Meio','CTR de link alto e custo por visita à página baixo','Muitos cliques e pouca visita/permanência'],['Fundo','Custo por conversa no WhatsApp estável e conversas que viram provas agendadas','Custo por conversa subindo semana a semana']].map(r=>`<tr><td>${r[0]}</td><td data-l="Sinal de vídeo bom">${r[1]}</td><td data-l="Sinal para trocar">${r[2]}</td></tr>`).join('')}</tbody></table>
 </div></section>`;
 
-PANELS.checklists = ch('11','11 · Checklists','Antes de gravar e <em>antes de publicar</em>','Marque cada item. O progresso fica salvo neste aparelho.',2) + `
+PANELS.checklists = ch('12','12 · Checklists','Antes de gravar e <em>antes de publicar</em>','Marque cada item. O progresso fica salvo neste aparelho.',2) + `
 <section class="sec"><div class="wrap"><div class="ckl">
  ${[['g','Antes de gravar'],['p','Antes de publicar']].map(([k,t])=>`<div class="rv" data-ck="${k}"><div class="ckhead"><h4>${t}</h4><div class="ring"><svg viewBox="0 0 40 40"><circle class="bg" cx="20" cy="20" r="18"/><circle class="fg" cx="20" cy="20" r="18" stroke-dasharray="113.1" stroke-dashoffset="113.1"/></svg><span>0/${CK[k].length}</span></div></div>${CK[k].map((x,i)=>`<div class="ck" data-i="${k}${i}"><span class="bx"></span><span class="tx">${x}</span></div>`).join('')}<button class="reset" data-reset="${k}">Limpar lista</button></div>`).join('')}
 </div></div></section>
@@ -787,8 +923,8 @@ addEventListener('resize',()=>{const b=document.querySelector('.tab.on');if(b)mo
 /* caixinhas */
 main.addEventListener('click',e=>{
   const c=e.target.closest('.chip');
-  if(c){document.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));
-    const f=c.dataset.f, qs=[...document.querySelectorAll('.q')];
+  if(c){const qs0=c.closest('.qset');qs0.querySelectorAll('.chip').forEach(x=>x.classList.toggle('on',x===c));
+    const f=c.dataset.f, qs=[...qs0.querySelectorAll('.q')];
     const vis=qs.filter(q=>f==='all'||q.dataset.c===f);
     qs.forEach(q=>q.classList.toggle('hide',!vis.includes(q)));
     if(hasG&&!reduce) gsap.fromTo(vis,{opacity:0,y:24},{opacity:1,y:0,duration:.8,stagger:.03,ease:'expo.out'});
