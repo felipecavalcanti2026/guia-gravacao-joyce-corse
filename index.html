@@ -305,6 +305,41 @@ main{position:relative;min-height:100vh}
 .fkm b{color:var(--gold2);font-weight:500}
 .fkc{align-self:flex-start;border:1px solid rgba(217,189,140,.45);color:var(--gold2);padding:9px 14px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:transparent;cursor:pointer;transition:all .4s}
 .fkc:hover{background:var(--gold);color:var(--ink)}
+.crst{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.crst button{text-align:left;border:1px solid var(--line);background:var(--paper);padding:34px 30px;display:flex;flex-direction:column;gap:10px;cursor:pointer;transition:transform .8s var(--ease),border-color .6s}
+.crst button:hover{transform:translateY(-6px);border-color:var(--gold)}
+.crst b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:64px;line-height:1;color:var(--gold)}
+.crst h5{font-family:var(--serif);font-weight:400;font-size:28px}
+.crst .crst-h{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:var(--goldd)}
+.crst p{font-size:14.5px;color:var(--mute)}
+.crst span{margin-top:auto;padding-top:10px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink)}
+.prio{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(217,189,140,.18);border:1px solid rgba(217,189,140,.18);margin-top:44px}
+.prio button{background:var(--ink);color:var(--cream);text-align:left;padding:30px 28px;cursor:pointer;transition:background .6s}
+.prio button:hover{background:#221d17}
+.prio b{font-family:var(--serif);font-style:italic;font-weight:400;font-size:44px;color:var(--gold);display:block;line-height:1;margin-bottom:14px}
+.prio h5{font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:6px}
+.prio p{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold2)}
+.crhead{display:grid;grid-template-columns:260px 1fr;gap:50px;align-items:end;margin-bottom:50px}
+.crhead .rimg{position:relative;top:0;aspect-ratio:3/4}
+.crgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;align-items:start}
+.crc{background:var(--paper);border:1px solid var(--line);padding:32px 30px;display:flex;flex-direction:column;gap:20px;position:relative;transition:border-color .6s,box-shadow .8s var(--ease)}
+.sec.alt .crc{background:var(--cream)}
+.crc:hover{border-color:var(--gold);box-shadow:0 20px 50px -30px rgba(22,19,15,.35)}
+.crc.pri{border-color:var(--gold)}
+.crc.pri::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--gold)}
+.crh{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.crn{font-family:var(--serif);font-style:italic;font-size:50px;line-height:1;color:var(--gold)}
+.crh small{font-size:9.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--mute)}
+.crh h4{font-family:var(--serif);font-weight:500;font-size:25px;line-height:1.15;margin-top:4px}
+.crb{grid-column:1/-1;justify-self:start;background:var(--ink);color:var(--gold2);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;padding:7px 12px}
+.crc h6{font-size:9.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.crg{border-left:2px solid var(--gold);padding-left:16px}
+.crg p{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.3}
+.crr p{font-size:14.5px;margin-bottom:8px}
+.crf{border-top:1px solid var(--line);padding-top:18px;display:flex;flex-direction:column;gap:14px}
+.crf span{font-size:14.5px;font-weight:500}
+.crf b{display:block;font-size:9.5px;letter-spacing:.32em;color:var(--gold);font-weight:500;margin-bottom:4px}
+.crf .fkc{color:var(--goldd);border-color:var(--gold)}
 .season{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
 .season div{padding:30px 26px;background:var(--cream);position:relative;overflow:hidden}
 .season h5{font-family:var(--serif);font-size:36px;font-weight:300;line-height:1}
@@ -366,7 +401,8 @@ footer a{color:var(--gold2);text-decoration:none}
 
 @media (max-width:1000px){
   .fgrid{grid-template-columns:repeat(2,1fr)}
-  .princ,.evts{grid-template-columns:repeat(2,1fr)}
+  .princ,.evts,.prio{grid-template-columns:repeat(2,1fr)}
+  .crst{grid-template-columns:1fr}
   .pers{grid-template-columns:1fr 1fr}
   .hooks,.qgrid{grid-template-columns:repeat(2,1fr)}
   .week{grid-template-columns:repeat(4,1fr)}
@@ -380,7 +416,9 @@ footer a{color:var(--gold2);text-decoration:none}
   .fstage{grid-template-columns:1fr;gap:16px}
   .fgrid{grid-template-columns:1fr 1fr;gap:18px}
   .callouts,.cols,.rules,.ckl,.season{grid-template-columns:1fr}
-  .princ,.evts,.pers,.fkg{grid-template-columns:1fr}
+  .princ,.evts,.pers,.fkg,.crst,.prio,.crgrid{grid-template-columns:1fr}
+  .crhead{grid-template-columns:1fr;gap:24px}.crhead .rimg{max-width:220px}
+  .crc{padding:26px 20px}
   .fala p{grid-template-columns:1fr;gap:4px}
   .fkst{margin:20px 18px 0}.fkb{padding:20px 18px 22px}
   .hooks,.qgrid{grid-template-columns:1fr}
@@ -429,7 +467,7 @@ footer a{color:var(--gold2);text-decoration:none}
     <div class="eyebrow hl-in">Joyce Corse Moda Festa · Guia de Gravação</div>
     <h1><span class="ln"><span>Guia de Gravação</span></span><span class="ln"><span><em>de topo a fundo</em></span></span><span class="ln"><span><em>de funil</em></span></span></h1>
     <div class="sub hl-in">
-      <p>Roteiros, técnica de gravação, 50 ideias de caixinhas de pergunta, rotina de conteúdo e um capítulo especial para formandas para um ateliê de aluguel de vestidos de alto padrão.</p>
+      <p>Roteiros, técnica de gravação, 50 ideias de caixinhas de pergunta, rotina de conteúdo e o guia de criativos para formandas para um ateliê de aluguel de vestidos de alto padrão.</p>
       <div class="scroll-ind"><span></span>ROLE</div>
     </div>
   </div>
@@ -588,89 +626,12 @@ const CK = {
 };
 
 /* ============ FORMANDAS (capítulo especial) ============ */
-const FR = [
- {n:'F01',t:'Formatura são três eventos',f:'Topo · Reels / Carrossel',img:9,o:'Mostrar que a formatura pede mais de um look e posicionar o aluguel como a escolha natural.',g:'“Formatura não é uma festa. São três. E você não vai repetir vestido em nenhuma.”',
-  r:['Colação de grau: vestido discreto e elegante, que aparece quando a beca abre (1 peça).','Culto ou missa: comprimento e decote mais fechados, tons suaves (1 peça).','Baile: a peça protagonista, com brilho, fenda ou cor forte (1 peça girando).','Fechamento: “Três looks, e nenhum parado no armário depois.”'],
-  k:['Três peças lado a lado na arara, depois uma por vez vestida.','Texto na tela com o nome de cada evento.','Giro em câmera lenta só no look do baile.'],
-  c:'“Formanda? Agende sua prova e monte os três looks de uma vez.”',d:'20–35s'},
- {n:'F02',t:'POV: a prova do vestido do baile',f:'Topo · Reels',img:12,o:'Emoção e identificação: a formanda se coloca no lugar da cliente.',g:'“POV: você estudou cinco anos para chegar nesse provador.”',
-  r:['Formanda chegando ao ateliê (de costas ou com autorização).','Cortes rápidos dos vestidos sendo separados na arara.','Cortina do provador abrindo: primeira vez com o vestido do baile.','Reação real dela e de quem está junto (mãe, amigas).'],
-  k:['Plano fixo na cortina do provador (o momento da revelação).','Close da reação, sem roteiro: deixe acontecer.','Detalhes: mãos fechando o zíper, ajuste da alça, sapato.'],
-  c:'“Sua vez de viver esse provador — agende pelo WhatsApp.”',d:'15–25s'},
- {n:'F03',t:'O vestido que aparece na foto do baile',f:'Topo · Reels / Carrossel',img:16,o:'Conteúdo educativo com alto potencial de salvamento: escolher pensando na foto noturna.',g:'“Esse vestido é lindo pessoalmente e some na foto do baile. Esse aqui, não.”',
-  r:['Comparar duas peças sob luz baixa e flash (simulando o salão do baile).','Explicar o que funciona: cor saturada, brilho e contraste com a decoração e o fundo escuro.','O que evitar: tons que se confundem com a pele ou com a decoração.','Dica final: perguntar à comissão a cor da decoração antes da prova.'],
-  k:['Ambiente escuro com uma luz pontual + flash do celular.','Mesma pose com as duas peças (antes x depois).','Joyce comentando em plano médio.'],
-  c:'“Salva e manda no grupo da turma.”',d:'25–40s'},
- {n:'F04',t:'Ninguém da turma com o mesmo vestido',f:'Topo · Reels',img:14,o:'Atacar o maior medo da formanda e reforçar a exclusividade.',g:'“O pesadelo de toda formanda: chegar no baile e ver uma colega com o mesmo vestido.”',
-  r:['Encenar o susto (duas amigas se olhando, corte seco).','Joyce explica como o ateliê evita isso na reserva (data, evento, turma).','Variedade do acervo de formatura em cortes rápidos.','Fechamento: “Aqui, o seu vestido é só seu naquela noite.”'],
-  k:['Duas modelos/colaboradoras com o mesmo vestido (cena de abertura).','Joyce na frente da arara.','Giros de 1–2s de várias peças.'],
-  c:'“Conte a data e a turma no WhatsApp e reserve o seu.”',d:'20–30s',x:'Só grave se o ateliê realmente controla a reserva por evento/turma. Promessa de exclusividade que falha uma vez queima a turma inteira.'},
- {n:'F05',t:'Mãe de formanda também se forma',f:'Meio · Reels',img:11,o:'Falar com quem normalmente decide e paga, e abrir um segundo aluguel na mesma família.',g:'“Mãe de formanda: você também passou por essa faculdade inteira.”',
-  r:['Mãe e filha no ateliê, cada uma provando o seu vestido.','Dica da Joyce para a mãe: elegância sem competir com a formanda (tons, comprimento, mangas).','As duas lado a lado no espelho.','Fechamento emotivo: a foto das duas no baile.'],
-  k:['Plano aberto do espelho com as duas.','Close das mãos (mãe arrumando o cabelo ou o colar da filha).','Foto real do baile enviada por cliente (com autorização).'],
-  c:'“Mãe e filha: agende uma prova juntas.”',d:'20–35s'},
- {n:'F06',t:'Prova com as amigas da turma',f:'Topo · Reels / Stories',img:22,o:'Gerar compartilhamento dentro da turma e trazer várias formandas na mesma visita.',g:'“Marca as amigas que vão dividir a mesa do baile com você.”',
-  r:['Grupo de amigas chegando ao ateliê.','Cada uma escolhe e prova o seu: cortes rápidos com a reação das outras.','Votação entre elas (“esse ou esse?”).','Final: todas juntas no espelho, cada uma com um vestido diferente.'],
-  k:['Plano aberto do grupo.','Reações em close.','Texto na tela com a votação.'],
-  c:'“Vem com a turma: agende a prova do grupo pelo WhatsApp.”',d:'20–30s'},
- {n:'F07',t:'O baile vai até as cinco da manhã',f:'Meio · Reels',img:28,o:'Quebrar a objeção de conforto e mostrar o ajuste como diferencial.',g:'“O baile vai até as cinco da manhã. Seu vestido aguenta?”',
-  r:['Teste na prova: sentar, levantar os braços, dançar, subir escada.','Joyce mostra o ajuste que garante isso (alça, barbatana, bainha na altura do salto).','Dica: provar com o sapato do baile.','Formanda dançando no ateliê como prova final.'],
-  k:['Formanda dançando em plano aberto.','Macro do ajuste e dos alfinetes.','Sapato e bainha em close.'],
-  c:'“Na prova, a gente ajusta para você dançar a noite inteira.”',d:'20–30s'},
- {n:'F08',t:'Quando escolher o vestido de formatura',f:'Meio · Reels / Carrossel',img:15,o:'Educar sobre antecedência e trazer a formanda para a prova no tempo certo.',g:'“Formatura em janeiro? Este é o mês certo para escolher o vestido.”',
-  r:['Linha do tempo simples: escolher, provar, ajustar, retirar.','Por que deixar para a última semana limita as opções (peças já reservadas para a data).','Quando trazer o sapato e os acessórios.','Convite: “Me fala a data que eu te digo se ainda está no prazo.”'],
-  k:['Joyce falando + texto na tela com cada etapa.','Inserts: agenda, provador, costura, retirada.'],
-  c:'“Mande a data do seu baile no WhatsApp.”',d:'25–40s',x:'Troque o mês do gancho conforme a data de publicação.'},
- {n:'F09',t:'Por baixo da beca',f:'Topo · Reels',img:25,o:'Ângulo pouco explorado: o look da colação também aparece.',g:'“O que vai por baixo da beca também aparece na foto do diploma.”',
-  r:['Formanda com a beca fechada; abre a beca e revela o vestido.','Dica: comprimento e decote que funcionam com a beca e com a faixa.','Tecidos que não amassam durante a cerimônia.','Mesmo vestido sem a beca, de corpo inteiro.'],
-  k:['Beca (ou capa preta) para a cena de abertura.','Plano médio na revelação.','Detalhe do decote com a faixa.'],
-  c:'“Colação chegando? Agende a prova do seu look.”',d:'15–25s'},
- {n:'F10',t:'Formanda no baile (prova social)',f:'Meio · Reels / Anúncio Site',img:27,o:'Mostrar o resultado real e criar desejo na próxima turma.',g:'“Ela escolheu esse vestido aqui no ateliê. Olha como ficou no baile.”',
-  r:['Vídeo ou foto da prova no ateliê.','Corte para ela no baile (vídeo enviado pela cliente).','Frase dela sobre a noite (áudio ou texto na tela).','Agradecimento e convite para a próxima turma.'],
-  k:['Pedir na retirada: “Manda um vídeo seu dançando no baile!”.','Guardar o vídeo da prova de cada formanda para montar o antes e depois.','Autorização de uso de imagem por escrito.'],
-  c:'“Formanda 2027? A próxima pode ser você.”',d:'15–30s'},
- {n:'F11',t:'Turmas de dezembro: datas reservadas',f:'Fundo · RMKT / Stories',img:30,o:'Urgência legítima no pico da temporada.',g:'“Turmas de dezembro: estes são os vestidos que ainda estão livres para a sua data.”',
-  r:['Arara com etiquetas de “reservado” em close.','Peças ainda disponíveis, uma a uma.','Chamada para consultar a disponibilidade da data.'],
-  k:['Etiquetas reais de reserva.','Giro rápido das peças livres.'],
-  c:'“Mande a data do seu baile e consulte a disponibilidade.”',d:'10–20s',x:'Só grave com reservas reais. Escassez falsa destrói a confiança de cliente de alto padrão.'},
- {n:'F12',t:'Convite da Joyce para formandas',f:'Fundo · Anúncio RMKT WhatsApp',img:33,o:'Converter a formanda que já conhece o ateliê.',g:'“Se você se forma até fevereiro, este vídeo é para você.”',
-  r:['Joyce olhando para a lente, sem rodeio.','O que acontece na prova da formanda: vários modelos, os três looks, ajuste e acessórios.','Como agendar: um clique no botão do WhatsApp.'],
-  k:['Joyce em plano médio.','Insert do provador e da arara de formatura.'],
-  c:'“Clique no botão e agende sua prova de formanda.”',d:'15–25s'}
-];
-
-const FG = [
- {c:'Identificação',s:'fala com a formanda',q:['Você estudou cinco anos para essa noite. O vestido não pode ser escolhido em cinco minutos.','Formanda 2026/27, este vídeo é seu.','Se você vai se formar e ainda não pensou no vestido, assiste até o final.','A única noite em que a turma inteira vai estar arrumada ao mesmo tempo.','Você só se forma uma vez. A foto vai para a parede para sempre.','Comissão de formatura, este vídeo é para mandar no grupo.']},
- {c:'Erro e alerta',s:'gera salvamento',q:['3 erros que fazem o vestido de formatura sumir nas fotos.','Não escolha o vestido do baile antes de saber a cor da decoração.','O erro que faz a formanda passar o baile inteiro sentada.','Pare de escolher o vestido do baile só pelo Pinterest.','Vestido de formatura não se prova sem o sapato do baile.']},
- {c:'Curiosidade',s:'segura até o fim',q:['O detalhe que separa o vestido de formatura do vestido de convidada.','O que vai por baixo da beca também aparece na foto.','O que o fotógrafo do baile queria que você soubesse antes de escolher o vestido.','Por que tantas formandas alugam em vez de comprar o vestido do baile.','Brilho ou cetim: qual aparece melhor na foto do baile?']},
- {c:'Visual (sem fala)',s:'para anúncio ThruPlay',q:['Primeiro frame: a cortina do provador abrindo e a formanda já vestida.','Close do brilho do tecido; corte seco para o corpo inteiro girando.','A beca abrindo e revelando o vestido.','Formanda caminhando para a câmera em câmera lenta, contra-luz.']},
- {c:'Mãe e família',s:'fala com quem decide',q:['Mãe de formanda: este vídeo é para mandar para a sua filha.','Mãe de formanda também se forma.','Mãe e filha no mesmo provador: a prova mais emocionante da semana.','Quem cuida de tudo da formatura também merece cuidar do próprio vestido.']},
- {c:'Turma e amigas',s:'gera compartilhamento',q:['Marca as amigas que vão dividir a mesa do baile com você.','O pesadelo da formanda: uma colega com o mesmo vestido.','Quatro amigas, quatro vestidos, um baile.','Prova em grupo: cada amiga sai com um vestido diferente.']},
- {c:'Calendário',s:'só quando for real',q:['Formatura em dezembro? Veja os vestidos que ainda estão livres para a sua data.','Turmas de janeiro e fevereiro já estão marcando a prova. Quando é o seu baile?','Me fala a data do seu baile que eu digo se você ainda está no prazo.','Os vestidos de formatura mais pedidos são os primeiros a ter a data reservada.']}
-];
-
 const FC = [
  {c:'Qualificam',s:'revelam quem está perto de agendar',q:['Qual é a data do seu baile? Te digo se ainda dá tempo.','Qual é o seu curso? Medicina, Direito, Engenharia…','Sua formatura é de faculdade ou de ensino médio?','Quantos eventos você vai ter: colação, culto, baile?','Qual é a cor da decoração do seu baile?','Já tem o sapato do baile ou vamos escolher junto?']},
  {c:'Estilo',s:'viram respostas em vídeo',q:['Descreva o vestido dos seus sonhos para o baile em 3 palavras.','Brilho, cetim ou renda: qual é a sua cara para o baile?','Fenda, costas nuas ou decote: qual vai ser o seu destaque?','Qual cor você quer na foto que vai para a parede?','Manda o print do vestido do feed que você usaria no baile.']},
  {c:'Enquetes e quiz',s:'engajamento rápido',q:['Enquete: longo ou midi para a colação?','Enquete: qual desses dois para o baile?','Quiz: o que aparece melhor na foto noturna? (brilho / tecido opaco)','Enquete: você vai provar com a mãe ou com as amigas?','Controle deslizante: quão ansiosa você está para o baile?']},
  {c:'Relacionamento',s:'conexão e prova social',q:['Qual é o seu maior medo para o dia do baile?','Conta: qual foi o momento mais difícil da faculdade?','Marca a amiga que vai dançar com você até o fim do baile.','Formanda: manda uma foto sua no baile com o nosso vestido!']}
 ];
-
-/* falas prontas dos roteiros de formanda */
-const FS = {
- F01:[['Gancho','Formatura não é uma festa. São três. E você não vai repetir vestido em nenhuma.'],['Cena 1 · colação','Na colação, o vestido aparece quando a beca abre e na foto com o diploma. Aqui eu gosto de um modelo discreto, elegante, que não amassa.'],['Cena 2 · culto','No culto, um pouco mais recatado: manga ou costas fechadas, um tom mais suave.'],['Cena 3 · baile','E no baile… aí é a sua noite. Brilho, fenda, cor forte. É o vestido da foto que vai para a parede.'],['CTA','Três looks, e nenhum parado no armário depois. Me chama no WhatsApp e agenda sua prova de formanda.']],
- F02:[['Texto na tela','POV: você estudou cinco anos para chegar nesse provador.'],['Cena','Sem fala. Arara, vestidos sendo separados, cortina do provador fechada.'],['Revelação','A cortina abre. Deixe o áudio real: a reação dela, da mãe, das amigas.'],['Texto final','O vestido da sua formatura está te esperando. Agende sua prova pelo WhatsApp.']],
- F03:[['Gancho','Esse vestido é lindo pessoalmente… e some na foto do baile. Olha.'],['Cena 1','(luz baixa + flash) Viu? A cor se mistura com o fundo escuro. Agora olha esse aqui.'],['Cena 2','Cor forte e brilho: na foto da noite, ele aparece. É isso que você quer no baile.'],['Dica','Antes de vir para a prova, pergunta para a comissão qual é a cor da decoração. Eu escolho com você pensando nisso.'],['CTA','Salva esse vídeo e manda no grupo da turma.']],
- F04:[['Gancho','O pesadelo de toda formanda: chegar no baile e ver uma colega com o mesmo vestido.'],['Cena','Duas amigas se olham com o mesmo vestido. Corte seco para a Joyce.'],['Fala','Aqui isso não acontece. Quando você reserva, eu anoto a data, o evento e a sua turma. Aquele vestido é só seu naquela noite.'],['CTA','Me manda a data e a turma no WhatsApp e reserva o seu.']],
- F05:[['Gancho','Mãe de formanda: você também passou por essa faculdade inteira.'],['Fala','Cada prova, cada noite sem dormir, cada etapa. No baile, você também merece estar impecável.'],['Dica','Para a mãe da formanda eu indico elegância sem competir com ela: tons mais fechados, manga ou tule, vestido longo.'],['Cena','As duas lado a lado no espelho.'],['CTA','Mãe e filha: agendem uma prova juntas. É a prova mais emocionante da semana.']],
- F06:[['Texto na tela','Marca as amigas que vão dividir a mesa do baile com você.'],['Cena','Grupo chegando, cada uma provando, votação “esse ou esse?”.'],['Fala','Prova com as amigas é a mais divertida. E cada uma sai daqui com um vestido diferente.'],['CTA','Junta a turma e agenda a prova do grupo pelo WhatsApp.']],
- F07:[['Gancho','O baile vai até as cinco da manhã. Seu vestido aguenta?'],['Fala','Na prova, eu peço para você sentar, levantar os braços, dançar. Se apertar em algum lugar, a gente ajusta ali mesmo.'],['Dica','E traz o sapato do baile: a barra é feita na altura do seu salto.'],['Cena','Formanda dançando no ateliê.'],['CTA','Na prova a gente ajusta para você dançar a noite inteira. Agenda pelo WhatsApp.']],
- F08:[['Gancho','Formatura em janeiro? Este é o mês certo para escolher o vestido.'],['Fala','Funciona assim: você escolhe, prova, a gente ajusta e você retira perto da data.'],['Fala','Quem deixa para a última semana encontra os vestidos mais pedidos já reservados.'],['CTA','Me fala a data do seu baile no WhatsApp que eu te digo se você ainda está no prazo.']],
- F09:[['Gancho','O que vai por baixo da beca também aparece na foto do diploma.'],['Cena','A beca abre e revela o vestido.'],['Fala','Para a colação, escolha um decote que combine com a faixa e um tecido que não amassa. A cerimônia é longa.'],['CTA','Colação chegando? Agenda a prova do seu look.']],
- F10:[['Texto na tela','Ela escolheu esse vestido aqui no ateliê. Olha como ficou no baile.'],['Cena','Prova no ateliê → corte seco para ela no baile.'],['Fala da cliente','“Eu me senti a mais bonita da festa.” (áudio dela ou texto na tela)'],['Fala da Joyce','Obrigada por me deixar fazer parte dessa noite.'],['CTA','Formanda 2027? A próxima pode ser você.']],
- F11:[['Gancho','Turmas de dezembro: estes são os vestidos que ainda estão livres para a sua data.'],['Cena','Etiquetas de “reservado” em close → peças livres girando.'],['Fala','Esses aqui já estão reservados. Esses ainda estão livres.'],['CTA','Me manda a data do seu baile e eu confirmo a disponibilidade.']],
- F12:[['Gancho','Se você se forma até fevereiro, este vídeo é para você.'],['Fala','Na prova de formanda, eu separo vários modelos, a gente monta os looks da colação, do culto e do baile, ajusta e escolhe os acessórios.'],['Fala','É um atendimento só seu, com hora marcada.'],['CTA','Clica no botão e agenda sua prova de formanda.']]
-};
 
 /* caixinhas fake: pergunta simulada + resposta pronta da Joyce + o que mostrar */
 const FK = [
@@ -696,6 +657,73 @@ const FK = [
  ['Por que alugar em vez de comprar o vestido de formatura?','Porque você vai usar uma vez e quer uma peça de alto padrão, ajustada no seu corpo, sem ficar parada no armário depois. E ainda pode ter um look para cada evento.','Arara cheia do ateliê',26]
 ];
 
+/* ============ FORMANDAS — Guia de Criativos (texto do PDF) ============ */
+const CR = [
+['01','O vestido da sua formatura','Você já imaginou como quer estar vestida no dia da sua formatura?',['A formatura é uma daquelas noites que ficam na memória para sempre. E, entre tantos detalhes, escolher o vestido certo faz toda a diferença.','Um vestido que combine com sua personalidade, valorize sua beleza e faça você se sentir incrível em cada momento.','Na Joyce Corse, você encontra opções para transformar essa escolha em uma experiência especial.'],'Comece a imaginar seu vestido ideal. Conheça a Joyce Corse.'],
+['02','Uma noite inesquecível','Tem noites que merecem um vestido à altura.',['Sua formatura representa anos de dedicação, desafios e conquistas.','É uma noite para celebrar tudo o que você viveu e, principalmente, tudo o que conquistou.','Por isso, o vestido não pode ser apenas mais um detalhe. Ele precisa fazer parte de uma noite que você vai lembrar para sempre.'],'Descubra as possibilidades para sua formatura na Joyce Corse.'],
+['03','Qual é o seu estilo?','Você é do time dos vestidos clássicos ou daqueles que chegam fazendo presença?',['Tem quem prefira um vestido minimalista, com elegância nos detalhes. Tem quem ame brilho, recortes e modelos marcantes.','E também existem aquelas que procuram uma produção sofisticada, sem abrir mão da personalidade.','Não existe uma escolha certa para todas. Existe o vestido que combina com você.'],'Qual desses estilos representa você? Venha descobrir na Joyce Corse.'],
+['04','O vestido dos sonhos','Imagine encontrar aquele vestido que você olha e pensa: é exatamente esse!',['Sabe quando você experimenta uma peça e percebe que encontrou o que estava procurando?','O caimento, os detalhes, a modelagem e a maneira como o vestido valoriza você.','É essa sensação que torna a escolha tão especial. Sua formatura merece uma produção que faça você se sentir única.'],'Venha viver essa experiência na Joyce Corse.'],
+['05','Não é só um vestido','Para algumas pessoas, é só um vestido. Para você, é o vestido da sua formatura.',['É o vestido que vai aparecer nas fotos, nos vídeos, nas lembranças e em uma das noites mais importantes da sua história.','Por isso, escolher com carinho faz toda a diferença.','Mais do que acompanhar uma tendência, encontre um modelo que represente quem você é.'],'Conheça as opções de vestidos de formatura da Joyce Corse.'],
+['06','O grande dia está chegando','Se a sua formatura está chegando, existe uma escolha que merece sua atenção.',['Entre convites, maquiagem, cabelo, acessórios e tantos preparativos, é fácil deixar a escolha do vestido para depois.','Mas encontrar o modelo ideal também faz parte da preparação para essa noite.','Comece a pesquisar, experimentar e descobrir quais modelos combinam com você.'],'Conheça a Joyce Corse e comece a planejar sua produção.'],
+['07','Tendências de formatura','Três estilos de vestido que merecem sua atenção para a formatura.',['Primeiro, os modelos com brilho, perfeitos para quem gosta de uma produção marcante.','Segundo, os vestidos com modelagem minimalista, que apostam na elegância dos cortes.','E terceiro, os modelos com transparências e detalhes diferenciados, para quem procura personalidade.','Mas lembre-se: tendência é inspiração. O mais importante é encontrar o vestido que combina com você.'],'Qual desses estilos você escolheria?'],
+['08','A experiência de experimentar','Existe uma diferença enorme entre gostar de um vestido na foto e experimentar ele no corpo.',['Na tela, você observa o modelo. Mas, quando experimenta, percebe o caimento, o movimento, os detalhes e como aquela peça valoriza sua silhueta.','É por isso que experimentar faz tanta diferença na escolha.','Às vezes, o vestido que você nem imaginava escolher acaba sendo o seu favorito.'],'Venha experimentar suas possibilidades na Joyce Corse.'],
+['09','A formatura começa antes','A sua formatura começa muito antes da noite da festa.',['Começa quando você escolhe o vestido, imagina a maquiagem, pensa no penteado e começa a visualizar cada detalhe daquela noite.','É uma preparação cheia de expectativas e momentos especiais.','E a escolha do vestido precisa acompanhar toda essa emoção.'],'Comece sua preparação com a Joyce Corse.'],
+['10','Para quem ama brilho','Se você acredita que uma formatura merece brilho, olha isso.',['Os vestidos com brilho têm uma presença especial. Eles acompanham a iluminação, valorizam os movimentos e criam uma produção marcante.','Mas existem diferentes formas de usar brilho: em toda a peça, em detalhes estratégicos ou combinado com uma modelagem mais minimalista.','O segredo é encontrar o equilíbrio que combina com seu estilo.'],'Venha conhecer os modelos disponíveis na Joyce Corse.'],
+['11','Elegância sem exageros','Você não precisa de exageros para ter uma produção inesquecível.',['Às vezes, a elegância está justamente na simplicidade.','Uma modelagem bem construída, um tecido especial, um recorte estratégico e detalhes que fazem toda a diferença.','Para quem prefere uma produção sofisticada e atemporal, existem opções que encantam sem precisar de excessos.'],'Descubra os modelos que combinam com seu estilo.'],
+['12','A escolha das amigas','Você e suas amigas já começaram a falar sobre os vestidos da formatura?',['Uma das partes mais divertidas dessa fase é compartilhar as expectativas com quem viveu essa jornada ao seu lado.','Cada uma tem seu estilo, suas preferências e uma ideia diferente para a grande noite.','E o mais interessante é encontrar uma produção que represente a personalidade de cada uma.'],'Envie este vídeo para aquela amiga que também vai se formar!'],
+['13','Seu momento de brilhar','Depois de tantos anos estudando, chegou a sua vez de celebrar.',['Foram provas, trabalhos, noites de dedicação e muitos desafios até chegar aqui.','Agora é hora de aproveitar tudo aquilo que você conquistou.','E nada mais especial do que escolher uma produção que acompanhe a importância desse momento.'],'Seu grande dia merece a Joyce Corse.'],
+['14','O vestido nas fotografias','Você já pensou em como quer se ver nas fotos da sua formatura daqui a dez anos?',['As fotografias vão guardar muito mais do que a aparência daquela noite. Elas vão registrar uma conquista e uma fase inteira da sua vida.','Por isso, escolher um vestido que tenha a sua identidade é tão importante.','Um modelo com o qual você se reconheça hoje e tenha orgulho de rever no futuro.'],'Encontre seu vestido para essa lembrança na Joyce Corse.'],
+['15','O que não pode faltar?','Se eu pudesse dar uma dica para toda formanda, seria esta.',['Não escolha seu vestido apenas porque ele está na moda ou porque ficou bonito em outra pessoa.','Observe o caimento, experimente diferentes modelagens e pense em como você quer se sentir durante a festa.','O vestido ideal precisa fazer sentido para você.'],'Salve essa dica e compartilhe com uma futura formanda.'],
+['16','Um vestido, muitas possibilidades','Você sabia que pequenos detalhes podem transformar completamente uma produção?',['Um vestido pode ganhar propostas completamente diferentes dependendo dos acessórios, do penteado e da maquiagem.','Uma produção mais clássica, moderna, romântica ou marcante.','Por isso, vale olhar para o conjunto e não apenas para a peça isoladamente.'],'Inspire-se com as possibilidades da Joyce Corse.'],
+['17','A contagem regressiva','Está chegando a época das formaturas e você já começou a imaginar seu look?',['Essa é uma fase cheia de expectativas. São meses de preparação para uma noite que representa uma conquista muito importante.','E quanto antes você começar a procurar seu vestido, mais tranquilidade terá para experimentar e escolher com cuidado.'],'Comece sua busca na Joyce Corse.'],
+['18','Por que escolher o aluguel?','Você não precisa comprar um vestido para ter uma produção extraordinária na sua formatura.',['O aluguel permite que você escolha um vestido especial para uma ocasião única, sem precisar investir na compra de uma peça que provavelmente será usada poucas vezes.','Assim, você pode explorar diferentes modelos, tecidos e propostas de produção.','O importante é encontrar uma peça que tenha qualidade, caimento e combine com o momento que você está vivendo.'],'Conheça as opções de aluguel da Joyce Corse.'],
+['19','Como escolher o vestido ideal?','Está em dúvida sobre qual vestido escolher para sua formatura? Observe estes três pontos.',['Primeiro: pense no seu estilo. Você prefere algo clássico, moderno, romântico ou marcante?','Segundo: considere o tipo de evento e o horário da celebração.','Terceiro: experimente diferentes modelagens. Nem sempre o modelo que você imaginou será aquele que mais vai surpreender no corpo.','A escolha fica muito mais fácil quando você tem orientação e boas opções.'],'Agende sua visita à Joyce Corse.'],
+['20','Veja os detalhes','Um vestido especial não é feito apenas para ser visto de longe.',['Observe os detalhes: o acabamento, a textura do tecido, os bordados, a construção da modelagem e o movimento da peça.','São esses elementos que ajudam a construir uma produção sofisticada.','Na Joyce Corse, você pode conhecer os vestidos de perto e experimentar cada possibilidade.'],'Venha conhecer nosso acervo.'],
+['21','O vestido certo para cada estilo','Separamos quatro propostas para diferentes estilos de formandas.',['Para quem ama romantismo: modelos delicados e femininos.','Para quem prefere sofisticação: vestidos minimalistas e cortes elegantes.','Para quem gosta de impacto: brilho e detalhes marcantes.','Para quem procura modernidade: recortes e modelagens diferenciadas.','Qualquer que seja seu estilo, o importante é encontrar uma peça que represente você.'],'Agende seu atendimento e descubra suas opções.'],
+['22','O que observar no caimento?','Um dos maiores segredos de um vestido elegante está no caimento.',['Não basta olhar apenas para o modelo. É importante observar como o vestido acompanha o corpo, como se comporta em movimento e como fica quando você caminha e se senta.','Esses detalhes fazem diferença no conforto e no resultado da produção.','Por isso, experimentar é uma etapa indispensável.'],'Venha encontrar seu modelo na Joyce Corse.'],
+['23','Não escolha apenas pela foto','Um conselho: não escolha seu vestido de formatura apenas olhando fotos na internet.',['Uma peça pode chamar sua atenção na tela, mas só experimentando você consegue perceber todos os detalhes.','O caimento pode surpreender, a modelagem pode valorizar de uma maneira que você não imaginava e aquele vestido que parecia não ser para você pode se tornar o favorito.','Dê a si mesma a oportunidade de experimentar.'],'Agende sua visita à Joyce Corse.'],
+['24','Bastidores do acervo','Quer conhecer um pouco do universo de vestidos que espera por você?',['Cada vestido tem uma proposta, uma personalidade e detalhes que fazem dele uma escolha especial.','Temos modelos para quem ama brilho, para quem prefere elegância minimalista e para quem procura uma produção cheia de personalidade.','Olha só algumas das possibilidades para sua formatura!'],'Gostou de algum modelo? Entre em contato e consulte a disponibilidade.'],
+['25','O atendimento faz diferença','Escolher o vestido da formatura não precisa ser uma decisão difícil.',['Quando você tem diferentes opções para experimentar e orientação durante a escolha, fica muito mais fácil entender o que realmente combina com você.','É uma oportunidade de descobrir novas possibilidades e comparar modelagens até encontrar aquela peça especial.','Na Joyce Corse, queremos que essa escolha também faça parte das boas lembranças da sua formatura.'],'Agende seu atendimento.'],
+['26','Vestido para colação e baile','Colação de grau e baile de formatura pedem produções diferentes.',['Enquanto a colação costuma ter uma proposta mais tradicional, o baile permite explorar diferentes estilos e produções.','Por isso, vale pensar na ocasião, no ambiente e na maneira como você deseja se apresentar em cada momento.','A escolha certa começa entendendo o que cada evento pede.'],'Converse com a equipe da Joyce Corse e descubra as opções para sua celebração.'],
+['27','Como funciona a escolha?','Você sabe como funciona o processo para escolher e alugar seu vestido na Joyce Corse?',['O primeiro passo é entrar em contato e agendar seu atendimento.','Depois, você vem até o ateliê, conhece as opções disponíveis e experimenta os modelos que mais combinam com seu estilo.','Com o vestido escolhido, nossa equipe orienta você sobre as condições de locação e os próximos passos.','Tudo para que sua preparação aconteça com mais tranquilidade.'],'Clique e agende seu atendimento.'],
+['28','A importância de experimentar','Às vezes, seu vestido favorito é justamente aquele que você não imaginava escolher.',['É muito comum chegar ao atendimento com referências e ideias bem definidas.','Mas experimentar outros estilos pode abrir possibilidades que você ainda não tinha considerado.','Um decote diferente, outra modelagem ou um tecido que você nunca imaginou usar.','Permita-se experimentar antes de decidir.'],'Venha descobrir seu vestido na Joyce Corse.'],
+['29','Produção completa','O vestido é o protagonista, mas a produção precisa conversar como um todo.',['Acessórios, penteado, maquiagem e vestido precisam construir uma composição harmoniosa.','Uma peça mais elaborada pode pedir acessórios delicados. Já um modelo minimalista permite explorar outros elementos da produção.','Pensar nesses detalhes ajuda a criar um visual elegante e coerente com seu estilo.'],'Comece a planejar sua produção com a Joyce Corse.'],
+['30','Qual cor escolher?','Uma das dúvidas mais comuns das formandas: qual cor escolher para o vestido?',['Existem opções clássicas, tons delicados, cores intensas e propostas modernas.','O segredo é considerar seu gosto pessoal, o estilo da festa e como aquela cor conversa com a produção que você deseja construir.','Não escolha apenas porque determinada cor está em alta. Escolha porque você se identifica com ela.'],'Venha conhecer as opções de cores disponíveis.'],
+['31','Modelos que valorizam','Você já experimentou diferentes modelagens para descobrir qual combina mais com você?',['Existem vestidos ajustados, modelos com saias volumosas, cortes retos, peças com fendas e diferentes tipos de decotes.','Cada modelagem cria uma proposta visual diferente.','Por isso, mais importante do que seguir regras é experimentar e encontrar aquela em que você se sente bonita e confortável.'],'Agende seu horário na Joyce Corse.'],
+['32','Para quem ainda não decidiu','Você já salvou dezenas de vestidos, mas ainda não sabe qual escolher?',['Isso acontece porque gostar de um vestido na internet é diferente de encontrar aquele que realmente combina com você.','Talvez você esteja em dúvida entre brilho e minimalismo, longo e mais ajustado, clássico e moderno.','O melhor caminho é experimentar diferentes possibilidades e comparar.'],'Venha conhecer nosso acervo e encontrar seu favorito.'],
+['33','O que levar para experimentar?','Vai experimentar seu vestido de formatura? Aqui vão algumas dicas.',['Leve referências dos modelos que você gosta, pense no estilo da sua produção e venha com disposição para experimentar diferentes possibilidades.','Se já tiver ideias de acessórios ou sapatos, também pode compartilhar com a equipe durante o atendimento.','Assim, fica mais fácil visualizar o resultado da produção.'],'Entre em contato e agende sua experiência na Joyce Corse.'],
+['34','Experiência de escolha','Existe um momento muito especial na preparação de uma formatura: encontrar o vestido.',['É quando as referências começam a ganhar vida, você experimenta diferentes modelos e percebe quais detalhes realmente fazem seus olhos brilharem.','É uma escolha que merece atenção, tempo e uma experiência à altura da ocasião.','Queremos fazer parte desse momento com você.'],'Agende seu atendimento na Joyce Corse.'],
+['35','Já escolheu seu vestido?','Formanda, você já resolveu a escolha do seu vestido?',['Se sua formatura está chegando e você ainda não encontrou o modelo ideal, esse é o momento de começar a procurar.','Na Joyce Corse, você encontra diferentes propostas de vestidos para conhecer e experimentar.','Não deixe uma das escolhas mais especiais da sua formatura para a última hora.'],'Clique no botão e agende seu atendimento.'],
+['36','Agende sua experiência','Seu vestido de formatura pode estar mais perto do que você imagina.',['Se você está procurando um vestido especial para sua formatura, queremos convidar você para conhecer a Joyce Corse.','Venha experimentar diferentes modelos, descobrir novas possibilidades e encontrar uma produção que combine com seu estilo.','Nossa equipe está pronta para receber você.'],'Clique em saiba mais e solicite seu agendamento.'],
+['37','Não deixe para depois','Um erro que muitas formandas cometem é deixar a escolha do vestido para muito perto da festa.',['Quanto antes você começar a procurar, mais tranquilidade terá para conhecer as opções, experimentar diferentes modelos e encontrar aquele que realmente deseja.','Além disso, a disponibilidade dos vestidos pode variar conforme as datas dos eventos.','Não espere a contagem regressiva começar para resolver essa escolha.'],'Entre em contato com a Joyce Corse e consulte a disponibilidade.'],
+['38','Seu vestido está aqui','Você pode estar a uma visita de encontrar o vestido da sua formatura.',['Se você já está pesquisando modelos, salvando referências e imaginando sua produção, chegou a hora de dar o próximo passo.','Venha conhecer nosso acervo, experimentar diferentes opções e descobrir qual vestido representa melhor seu estilo.'],'Clique e agende sua visita à Joyce Corse.'],
+['39','Última etapa da preparação','Já resolveu a maquiagem, o cabelo e os acessórios, mas ainda falta o vestido?',['Não deixe esse detalhe tão importante para depois.','A escolha do vestido merece atenção, principalmente para que você consiga experimentar diferentes opções e organizar sua produção com tranquilidade.','Vamos encontrar o modelo ideal para sua noite?'],'Fale com nossa equipe e agende seu atendimento.'],
+['40','Convite direto','Um convite especial para você que vai se formar.',['A Joyce Corse está pronta para receber você que procura um vestido especial para celebrar essa conquista.','Temos diferentes propostas para quem deseja uma produção elegante, sofisticada e cheia de personalidade.','Venha conhecer nosso espaço e experimentar os modelos disponíveis.'],'Clique no botão e fale com nossa equipe pelo WhatsApp.'],
+['41','Dúvida sobre disponibilidade','Encontrou um vestido que amou? Então não deixe de consultar a disponibilidade.',['Os vestidos são procurados para diferentes eventos e datas de formatura.','Por isso, se você encontrou um modelo que chamou sua atenção, entre em contato para verificar se ele está disponível para a data da sua festa.','Nossa equipe pode orientar você sobre as opções.'],'Envie uma mensagem e consulte a disponibilidade.'],
+['42','Ainda está pesquisando?','Se você ainda está pesquisando vestidos para sua formatura, queremos facilitar sua escolha.',['Na Joyce Corse, você pode conhecer diferentes estilos e experimentar modelos para entender qual combina mais com sua personalidade.','Não precisa decidir apenas olhando fotografias. Venha conhecer as peças de perto.'],'Clique e solicite um horário de atendimento.'],
+['43','Para quem já conhece a Joyce','Você já conhece a Joyce Corse, mas ainda não agendou seu atendimento?',['Se você está acompanhando nossos vestidos e encontrou modelos que combinam com seu estilo, aproveite para dar o próximo passo.','Venha experimentar, conhecer os detalhes e conversar com nossa equipe sobre as opções disponíveis para sua formatura.','Estamos esperando por você.'],'Agende agora seu atendimento.'],
+['44','O vestido que você salvou','Aquele vestido que você salvou pode ser o começo da sua produção de formatura.',['Você já tem referências, já sabe quais estilos chamam sua atenção e provavelmente já imaginou como quer estar naquela noite.','Agora falta transformar essa inspiração em uma escolha real.','Venha experimentar os modelos e descobrir qual deles conquista você pessoalmente.'],'Fale com a Joyce Corse e agende sua visita.'],
+['45','Atendimento personalizado','Você merece escolher seu vestido com calma e atenção aos detalhes.',['Cada formanda tem uma personalidade, uma preferência e uma ideia diferente para sua grande noite.','Por isso, conhecer as opções pessoalmente e experimentar diferentes modelos faz toda a diferença.','Na Joyce Corse, você pode viver essa experiência e encontrar uma peça que combine com o que está imaginando.'],'Entre em contato e agende seu atendimento.'],
+['46','A data está marcada','Sua formatura já tem data marcada? Então vamos falar sobre o vestido.',['Com a data definida, você já pode começar a organizar essa escolha tão importante.','Entre em contato com a Joyce Corse, informe quando será sua formatura e consulte as possibilidades disponíveis para sua ocasião.','Assim, você consegue planejar sua produção com antecedência.'],'Clique e consulte nossa equipe.'],
+['47','Uma escolha que não pode esperar','Você organizou tantos detalhes para sua formatura. Não deixe o vestido para o último momento.',['A escolha do vestido envolve experimentar, comparar modelos e encontrar aquele que realmente representa você.','Quanto antes você começar, mais tranquilidade terá para tomar essa decisão.','Se sua formatura está se aproximando, aproveite para conhecer nossas opções.'],'Agende seu atendimento na Joyce Corse.'],
+['48','Seu modelo favorito','Entre tantos modelos, existe aquele que faz você parar e olhar duas vezes.',['Pode ser o brilho, o caimento, a cor ou um detalhe especial.','Mas quando você encontra um vestido que combina com sua personalidade, a escolha começa a fazer sentido.','Se você já encontrou referências que ama, traga para nosso atendimento e vamos explorar as possibilidades.'],'Clique e agende sua visita.'],
+['49','Para as formandas indecisas','Se você está entre dois ou três vestidos e não consegue decidir, este vídeo é para você.',['Não precisa escolher seu vestido apenas pela primeira impressão.','Experimente, caminhe, observe os detalhes e perceba como você se sente em cada modelo.','Aquele que combina com sua personalidade e faz você se sentir segura merece sua atenção.','Nossa equipe pode ajudar você nesse processo.'],'Agende seu atendimento e venha experimentar.'],
+['50','O convite final','Formanda, essa conquista merece ser celebrada em grande estilo.',['Foram anos de dedicação para chegar até aqui. Agora é hora de aproveitar cada detalhe dessa conquista.','E a Joyce Corse quer fazer parte da sua preparação.','Conheça nossos vestidos de festa, experimente diferentes modelos e encontre aquele que vai acompanhar você em uma das noites mais especiais da sua vida.'],'Clique no botão, fale com nossa equipe e agende seu atendimento.']
+];
+const CRP = {'03':'Identificação e interação','04':'Construção de desejo','18':'Quebra de objeção','23':'Incentivo à experimentação','35':'Intenção de agendamento','41':'Conversão e consulta'};
+const CRS = [
+ {k:'topo',l:'Topo de funil',a:0,b:17,img:19,h:'Atenção, identificação <em>e desejo</em>',d:'A formanda pode ainda não conhecer a Joyce Corse ou não estar procurando ativamente um vestido. O objetivo é fazê-la se identificar e imaginar como quer estar no dia da formatura.',o:'Alcance, identificação e descoberta',p:'Trabalhar com públicos amplos e interesses relacionados a formatura, graduação, moda festa e eventos.'},
+ {k:'meio',l:'Meio de funil',a:17,b:34,img:12,h:'Consideração, confiança <em>e diferenciação</em>',d:'Para quem já demonstrou interesse em vestidos, acompanhou o perfil ou começou a pesquisar opções. O objetivo é apresentar os modelos, diferenciais e ajudar na escolha.',o:'Interesse, consideração e confiança',p:'Trabalhar pessoas que assistiram aos vídeos, interagiram com o Instagram ou demonstraram interesse nos conteúdos.'},
+ {k:'fundo',l:'Fundo de funil',a:34,b:50,img:27,h:'Conversão, agendamento <em>e decisão</em>',d:'Para quem já conhece a Joyce Corse, assistiu aos vídeos, visitou o perfil ou demonstrou interesse. A comunicação deve ser direta e estimular o próximo passo.',o:'Conversas e agendamentos',p:'Trabalhar pessoas que visitaram o perfil, clicaram nos anúncios, iniciaram conversas ou demonstraram intenção de agendar.'}
+];
+const crText = c => `CRIATIVO ${c[0]} — ${c[1].toUpperCase()}\n\nGANCHO\n“${c[2]}”\n\nROTEIRO\n${c[3].join('\n')}\n\nCTA\n${c[4]}`;
+const crCard = c => `<article class="crc rv${CRP[c[0]]?' pri':''}" id="cr-${c[0]}">
+ <div class="crh"><span class="crn">${c[0]}</span><div><small>Criativo ${c[0]}</small><h4>${c[1]}</h4></div>${CRP[c[0]]?`<span class="crb">Prioritário · ${CRP[c[0]]}</span>`:''}</div>
+ <div class="crg"><h6>Gancho</h6><p>“${c[2]}”</p></div>
+ <div class="crr"><h6>Roteiro</h6>${c[3].map(x=>`<p>${x}</p>`).join('')}</div>
+ <div class="crf"><span><b>CTA</b>${c[4]}</span><button class="fkc" data-q="${crText(c).replace(/"/g,'&quot;')}">Copiar criativo</button></div>
+</article>`;
+
 const qBtns = (G,pre) => { let i=0; return G.map((g,gi)=>g.q.map(q=>{i++;return `<button class="q" data-c="${pre}${gi}" data-q="${q.replace(/"/g,'&quot;')}"><span class="qn">${String(i).padStart(2,'0')}</span><span class="qt">${q}</span><span class="qc">${g.c} · ${g.s}</span><span class="cp">Copiar</span></button>`}).join('')).join(''); };
 const qSet = (G,pre) => `<div class="qset"><div class="chips rv"><button class="chip on" data-f="all">Todas <small>${G.reduce((a,g)=>a+g.q.length,0)}</small></button>${G.map((g,i)=>`<button class="chip" data-f="${pre}${i}">${g.c} <small>${g.q.length}</small></button>`).join('')}</div><div class="qgrid">${qBtns(G,pre)}</div></div>`;
 
@@ -717,7 +745,6 @@ const rotHTML = r => `<article class="rot">
     <h3 class="rv">${r.t}</h3>
     <p class="obj rv"><b>Objetivo:</b> ${r.o}</p>
     <div class="gancho rv"><h6>GANCHO (0–3S)</h6><p>${r.g}</p></div>
-    ${FS[r.n]?`<div class="fala rv"><h6>Roteiro falado</h6>${FS[r.n].map(l=>`<p><span>${l[0]}</span>${l[1]}</p>`).join('')}<button class="fkc" data-q="${FS[r.n].map(l=>l[0].toUpperCase()+': '+l[1]).join('\n').replace(/"/g,'&quot;')}">Copiar roteiro</button></div>`:''}
     <div class="rgrid rv"><div><h6>Roteiro</h6><ol>${r.r.map(x=>`<li>${x}</li>`).join('')}</ol></div><div><h6>Takes para gravar</h6><ul>${r.k.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
     <div class="rfoot rv"><span><b>CTA:</b> ${r.c}</span><span class="dur">${r.d}</span></div>${r.x?`
     <p class="obs rv"><b>Atenção:</b> ${r.x}</p>`:''}
@@ -788,57 +815,57 @@ PANELS.fundo = ch('06','06 · Fundo de funil','Roteiros de <em>conversão</em>',
 <section class="sec" style="padding-bottom:0"><div class="wrap"><div class="call rv" style="background:var(--cream)"><h4>Regras do fundo de funil</h4>${ul(['Uma única chamada para ação por vídeo (“Clique e agende sua prova”).','CTA falado <b>e</b> escrito na tela nos últimos 3 segundos.','Escassez apenas quando for real (datas e peças de fato reservadas). Escassez falsa destrói a confiança de cliente de alto padrão.','Renovar os vídeos de fundo a cada 3–4 semanas.'])}</div></div></section>
 <section class="sec" style="padding-top:40px"><div class="wrap">${ROT.fundo.map(rotHTML).join('')}</div></section>`;
 
-PANELS.formandas = ch('07','07 · Especial formandas','O vestido da foto <em>que vai para a parede</em>','Tudo pronto para gravar para formandas: 12 roteiros com a fala da Joyce, 32 ganchos, 20 caixinhas fake com resposta pronta e 20 caixinhas para postar. No fim do capítulo: stories, atendimento no WhatsApp, perfis e calendário da temporada.',19,'12 roteiros com fala · 32 ganchos · 20 caixinhas fake') + `
-<section class="sec" style="padding:44px 0 0"><div class="wrap"><div class="fnav rv">${[['fx-rot','01','Roteiros com fala'],['fx-gan','02','Ganchos'],['fx-fake','03','Caixinhas fake'],['fx-cx','04','Caixinhas para postar'],['fx-st','05','Stories'],['fx-zap','06','WhatsApp e gravação'],['fx-ctx','07','Perfis e eventos']].map(j=>`<button class="fj" data-jump="${j[0]}"><b>${j[1]}</b>${j[2]}</button>`).join('')}</div></div></section>
-<section class="sec alt" id="fx-rot" style="padding-bottom:0"><div class="wrap">
- <div class="eyebrow rv">Roteiros</div><h3 class="h3 rv">12 roteiros <em>com a fala pronta</em></h3>
- <p class="intro rv">Proporção sugerida para a temporada: 5 de topo (F01, F02, F03, F04, F06, F09), 3 de meio (F05, F07, F08, F10) e 2 de fundo (F11, F12). Escolha os que fazem mais sentido para a semana.</p>
+const CRG = CRS.map(s=>({c:s.l,s:`criativos ${CR[s.a][0]}–${CR[s.b-1][0]}`,q:CR.slice(s.a,s.b).map(c=>c[2])}));
+PANELS.formandas = ch('07','07 · Guia de criativos para formandas','Guia de criativos <em>para formandas</em>','A proposta é construir uma comunicação que acompanhe a formanda desde o primeiro contato com a marca até o agendamento no ateliê. Os anúncios não devem repetir apenas que existem vestidos bonitos: cada criativo trabalha um desejo, uma dúvida ou uma objeção diferente.',19,'50 roteiros de anúncios · topo, meio e fundo de funil') + `
+<section class="sec" style="padding:44px 0 0"><div class="wrap"><div class="fnav rv">${[['fx-est','Estratégia'],['fx-topo','Topo · 01–17'],['fx-meio','Meio · 18–34'],['fx-fundo','Fundo · 35–50'],['fx-gan','50 ganchos'],['fx-dir','Direção de gravação'],['fx-dist','Distribuição'],['fx-fake','Caixinhas']].map((j,i)=>`<button class="fj" data-jump="${j[0]}"><b>${String(i+1).padStart(2,'0')}</b>${j[1]}</button>`).join('')}</div></div></section>
+<section class="sec" id="fx-est"><div class="wrap">
+ <div class="eyebrow rv">Estratégia do guia</div><h3 class="h3 rv">50 criativos, <em>três etapas</em></h3>
+ <div class="crst">${CRS.map(s=>`<button class="rv" data-jump="fx-${s.k}"><b>${s.b-s.a}</b><h5>${s.l}</h5><p class="crst-h">${s.h.replace(/<\/?em>/g,'')}</p><p>${s.d}</p><span>Criativos ${CR[s.a][0]}–${CR[s.b-1][0]} →</span></button>`).join('')}</div>
 </div></section>
-<section class="sec alt" style="padding-top:20px"><div class="wrap">${FR.map(rotHTML).join('')}</div></section>
+<section class="sec dark"><div class="wrap">
+ <div class="eyebrow rv">Criativos prioritários para os primeiros testes</div><h3 class="h3 rv">Comece <em>por estes seis</em></h3>
+ <div class="prio">${Object.entries(CRP).map(([n,o])=>{const c=CR.find(x=>x[0]===n);return `<button class="rv" data-jump="cr-${n}"><b>${n}</b><h5>${c[1]}</h5><p>${o}</p></button>`}).join('')}</div>
+</div></section>
+${CRS.map((s,i)=>`<section class="sec${i%2?' alt':''}" id="fx-${s.k}"><div class="wrap">
+ <div class="crhead"><figure class="rimg" data-lb="${s.img}"><img src="${P(s.img)}" alt="" loading="lazy"></figure><div><div class="eyebrow rv">${i+1}. ${s.l} · criativos ${CR[s.a][0]}–${CR[s.b-1][0]}</div><h3 class="h3 rv">${s.h}</h3><p class="intro rv">${s.d}</p></div></div>
+ <div class="crgrid">${CR.slice(s.a,s.b).map(crCard).join('')}</div>
+</div></section>`).join('')}
 <section class="sec" id="fx-gan"><div class="wrap">
- <div class="eyebrow rv">Banco de ganchos</div><h3 class="h3 rv">32 ganchos <em>para os 3 primeiros segundos</em></h3>
- <p class="intro rv">Toque num gancho para copiar. Cada roteiro abaixo funciona com vários deles: grave 2–3 ganchos diferentes para o mesmo vídeo e deixe o tráfego testar.</p>
- ${qSet(FG,'g')}
+ <div class="eyebrow rv">Banco de ganchos</div><h3 class="h3 rv">Os 50 ganchos <em>do guia</em></h3>
+ <p class="intro rv">Toque num gancho para copiar. Úteis para gravar o gancho separadamente e testar variações no mesmo vídeo.</p>
+ ${qSet(CRG,'g')}
+</div></section>
+<section class="sec alt" id="fx-dir"><div class="wrap">
+ <div class="eyebrow rv">4. Direção de gravação</div><h3 class="h3 rv">Como gravar <em>os criativos</em></h3>
+ <table class="tbl rv"><thead><tr><th>Item</th><th>Padrão</th></tr></thead><tbody>${[['Formato','Vertical 9:16, preferencialmente em 1080 × 1920.'],['Duração sugerida','Topo: 15 a 30 segundos; meio: 20 a 40 segundos; fundo: 15 a 30 segundos.'],['Apresentação','Falar diretamente com a câmera, de maneira natural, segura e elegante.'],['Edição','Cortes dinâmicos, legendas bem posicionadas, imagens de apoio dos vestidos e detalhes do ateliê.']].map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table>
+ <div class="cols" style="margin-top:70px">
+  <div class="blk rv"><h4>Imagens de apoio para captar</h4>${ul(['Modelos caminhando com os vestidos.','Detalhes dos tecidos e bordados.','Close nos acabamentos.','Movimento das saias.','Diferentes modelos expostos no acervo.','Vestidos em cabides, com boa iluminação.','Bastidores da preparação do atendimento.','Detalhes do ambiente do ateliê.','Modelos mostrando diferentes ângulos dos vestidos.','Combinações de vestidos com acessórios.'])}</div>
+  <div class="blk rv"><h4>Orientações importantes</h4>${ul(['Não decorar o texto palavra por palavra. Entender a ideia e falar naturalmente.','Gravar o gancho separadamente, se necessário.','Não começar todos os vídeos com apresentações institucionais.','Evitar falar rápido demais.','Mostrar os vestidos enquanto fala sobre eles.','Utilizar iluminação que valorize as cores e os detalhes das peças.','Sempre gravar imagens extras sem fala para utilizar na edição.','Não utilizar filtros que alterem a cor real dos vestidos.'])}</div>
+ </div>
+</div></section>
+<section class="sec" id="fx-dist"><div class="wrap">
+ <div class="eyebrow rv">5. Estratégia de distribuição</div><h3 class="h3 rv">Testar argumentos, <em>não lançar tudo de uma vez</em></h3>
+ <p class="intro rv">Os 50 criativos não precisam entrar todos simultaneamente. A ideia é criar variedade de argumentos e testar quais mensagens geram mais atenção e agendamentos.</p>
+ <table class="tbl rv" style="margin-top:34px"><thead><tr><th>Etapa</th><th>Quantidade</th><th>Objetivo</th></tr></thead><tbody>${CRS.map(s=>`<tr><td>${s.l.replace(' de funil','')}</td><td>${s.b-s.a}</td><td>${s.o}</td></tr>`).join('')}</tbody></table>
+ <div class="season">${CRS.map(s=>`<div class="rv"><h5>${s.l}</h5><p>${s.p}</p></div>`).join('')}</div>
+ <p class="intro rv" style="margin-top:24px;font-size:14px">A distribuição deve acompanhar o volume de público disponível e os resultados de cada etapa.</p>
+ <div class="call rv" style="margin-top:50px"><h4>Variedade de formatos</h4><p>Não transformar os 50 vídeos em anúncios com a mesma estrutura. Misturar vídeos falados, demonstrações de vestidos, provadores, takes cinematográficos e vídeos com perguntas na tela. Assim, é possível testar diferentes argumentos e formatos de criativo.</p></div>
 </div></section>
 <section class="sec dark" id="fx-fake"><div class="wrap">
  <div class="eyebrow rv">Caixinhas fake</div><h3 class="h3 rv">20 perguntas <em>com resposta pronta</em></h3>
- <p class="intro rv" style="color:rgba(248,243,236,.75)">A Joyce publica a pergunta na figurinha de caixinha, como se tivesse chegado de uma seguidora, e responde em vídeo mostrando a peça. São as dúvidas que toda formanda tem, respondidas antes de virarem “vou pensar”. Trechos entre [colchetes] a Joyce completa com a regra do ateliê.</p>
+ <p class="intro rv" style="color:rgba(248,243,236,.75)">A Joyce publica a pergunta na figurinha de caixinha, como se tivesse chegado de uma seguidora, e responde em vídeo mostrando a peça. Trechos entre [colchetes] a Joyce completa com a regra do ateliê.</p>
  <div class="fkg">${FK.map((f,i)=>`<div class="fk rv"><div class="fkst"><div class="fkh">Faça uma pergunta</div><p>${f[0]}</p></div><div class="fkb"><h6>${String(i+1).padStart(2,'0')} · Resposta da Joyce</h6><p>“${f[1]}”</p><div class="fkm"><img src="${P(f[3])}" alt="" data-lb="${f[3]}" loading="lazy"><span><b>Na tela:</b> ${f[2]}</span></div><button class="fkc" data-q="${f[0].replace(/"/g,'&quot;')}">Copiar pergunta</button></div></div>`).join('')}</div>
 </div></section>
 <section class="sec" id="fx-cx"><div class="wrap">
- <div class="eyebrow rv">Caixinhas para formandas</div><h3 class="h3 rv">20 perguntas <em>que qualificam a formanda</em></h3>
+ <div class="eyebrow rv">Caixinhas para postar</div><h3 class="h3 rv">20 perguntas <em>para as seguidoras responderem</em></h3>
  <p class="intro rv">Quem responde com a data do baile e o curso já é uma cliente em potencial: chame no direct com uma mensagem personalizada.</p>
  ${qSet(FC,'c')}
 </div></section>
-<section class="sec alt" id="fx-st"><div class="wrap">
- <div class="eyebrow rv">Stories na temporada</div><h3 class="h3 rv">Um dia de stories <em>para formandas</em></h3>
- <div class="tl">${[['Manhã','Arara de formatura sendo montada + “Hoje é dia de prova de formanda”.','Desejo'],['Meio da manhã','Enquete com dois vestidos de baile.','Interação'],['Almoço','Caixinha de formanda (acima).','Qualificação'],['Tarde','Bastidor de prova de formanda (com autorização): cortina abrindo, reação, mãe ou amigas.','Experiência'],['Fim da tarde','Respostas da caixinha em vídeo, com a peça na mão.','Autoridade'],['Noite','Formanda no baile (vídeo de cliente) + figurinha de link do WhatsApp.','Conversão']].map(t=>`<div class="tli rv"><div class="tm">${t[0]}</div><div><p>${t[1]}</p></div><div class="ob">${t[2]}</div></div>`).join('')}</div>
- <div class="hl rv" style="margin-top:50px">${[['Formandas',27],['Baile',9],['Colação',25],['Mãe & filha',11]].map(h=>`<div class="hlc"><span><i><img src="${P(h[1])}" alt=""></i></span>${h[0]}</div>`).join('')}</div>
- <p class="intro rv" style="margin-top:26px">Crie o destaque <b>Formandas</b> entre <b>Acervo</b> e <b>Clientes</b> durante a temporada e alimente com cada formanda no baile.</p>
-</div></section>
-<section class="sec" id="fx-zap"><div class="wrap"><div class="cols">
- <div class="blk rv"><h4>Atendimento no WhatsApp</h4><p style="font-size:14.5px">Mensagem pronta no link dos anúncios e stories de formanda:</p>
-  <div class="code"><span class="k">“Oi, Joyce! Sou formanda e quero agendar minha prova. Meu baile é dia ___.”</span></div>
-  <p style="font-size:14.5px;margin-top:22px">Perguntas da primeira resposta (para chegar à prova já sabendo o que separar):</p>
-  ${ul(['Qual é a data do baile? E da colação e do culto?','Qual é o curso e a cidade da formatura?','Qual é a cor da decoração do baile?','Vem sozinha, com a mãe ou com as amigas?','Já tem sapato? Se tiver, traga na prova.'])}</div>
- <div class="blk rv"><h4>Dia de gravação para formandas</h4>${ul(['Beca ou capa preta para os vídeos de colação (F09).','Arara só com peças de formatura, organizada por cor.','Luz baixa + um ponto de luz para simular o salão do baile (F03).','Etiquetas de “reservado” reais para o F11.','Autorização de imagem assinada (pelo responsável, se a formanda for menor de idade).','Gravar a cortina do provador de toda formanda que autorizar (F02 e F10).','Na retirada, pedir: “Manda um vídeo seu dançando no baile!”.'])}</div>
-</div></div></section>
-<section class="sec alt" id="fx-ctx"><div class="wrap">
- <div class="eyebrow rv">Para quem você está gravando</div><h3 class="h3 rv">Uma formatura, <em>três decisoras</em></h3>
- <div class="pers">${[['A formanda','Ser a mais bonita da foto, não repetir look e dançar a noite inteira.','Medo de chegar ao baile com o mesmo vestido de uma colega; deixar tudo para a última hora.','Emoção, foto, exclusividade, conforto.'],
-   ['A mãe','Ver a filha impecável e estar elegante também, sem competir com ela.','Higiene, ajuste, segurança da reserva e quem vai atender.','Processo, cuidado, atendimento da Joyce. Muitas vezes é ela quem paga.'],
-   ['A turma','Resolver junto, com as amigas, e cada uma com o seu vestido.','Agenda de muita gente ao mesmo tempo.','Prova em grupo, compartilhamento, “marca a amiga”.']
-  ].map(p=>`<div class="rv"><h5>${p[0]}</h5><dl><dt>O que ela quer</dt><dd>${p[1]}</dd><dt>O que trava</dt><dd>${p[2]}</dd><dt>Como falar com ela</dt><dd>${p[3]}</dd></dl></div>`).join('')}</div>
-</div></section>
 <section class="sec dark"><div class="wrap">
- <div class="eyebrow rv">A jornada da formanda</div><h3 class="h3 rv">Não é um vestido. <em>São até quatro looks.</em></h3>
- <div class="evts">${[['01','Colação de grau','Discreto e elegante. Aparece quando a beca abre e na foto com o diploma. Tecido que não amassa durante a cerimônia.'],['02','Culto ou missa','Mais recatado: mangas ou costas fechadas, comprimento midi ou longo, tons suaves.'],['03','Baile','O protagonista. Brilho, fenda ou cor forte que aparece na foto noturna, e ajuste que aguenta horas de dança.'],['04','Ensaio de formatura','Fotos de turma ou ensaio individual, geralmente com luz do dia. Cor e tecido que funcionam ao ar livre.']].map(e=>`<div class="rv"><b>${e[0]}</b><h5>${e[1]}</h5><p>${e[2]}</p></div>`).join('')}</div>
- <p class="intro rv" style="margin-top:30px;color:rgba(248,243,236,.75)">Cada evento é um aluguel. Na prova, apresente os looks juntos: a formanda que veio pelo baile pode sair com a colação e o culto resolvidos.</p>
-</div></section>
-<section class="sec"><div class="wrap"><div class="call rv"><h4>Regras do capítulo formandas</h4>${ul(['CTA de todos os vídeos: <b>agendar a prova pelo WhatsApp</b>.','Exclusividade, nunca preço: nada de “promoção de formatura” ou “desconto de turma”. Se houver condição para grupo, apresente como <b>atendimento exclusivo para a turma</b>.','Exclusividade por turma e escassez de datas só quando forem reais.','Formanda menor de idade (ensino médio): autorização de imagem assinada pelo responsável.','Grave com 4–6 semanas de antecedência da data de publicação.'])}</div></div></section>
-<section class="sec dark"><div class="wrap">
- <div class="eyebrow rv">Calendário da temporada</div><h3 class="h3 rv">O que gravar <em>em cada fase</em></h3>
- <div class="stick">${[['Ago–Set','Planejamento: os três eventos, cores para foto, tendências. Muito topo (F01, F03, F09).'],['Outubro','Escolha: POV da prova, amigas, mãe e filha, conforto (F02, F05, F06, F07).'],['Novembro','Reserva: antecedência, convite da Joyce, datas reservadas reais (F08, F11, F12).'],['Dez–Fev','Bailes: vídeos das clientes no baile e compilados (F10). Vira prova social da próxima turma.'],['Agora','Turmas de dezembro: fundo (F11, F12). Turmas de jan/fev: F01 a F08. Recolher vídeos de cada baile.']].map(s=>`<div class="rv"><h5>${s[0]}</h5><p>${s[1]}</p></div>`).join('')}</div>
+ <div class="eyebrow rv">A mensagem central</div>
+ <p class="intro rv" style="margin-top:20px;color:rgba(248,243,236,.8)">A comunicação da Joyce Corse precisa vender muito mais do que o aluguel de um vestido. Precisamos vender a experiência de encontrar a peça certa para uma ocasião que representa anos de dedicação e uma conquista pessoal.</p>
+ <p class="quote rv" style="margin-top:40px">Sofisticação <em>sem distância</em>. Exclusividade <em>sem arrogância</em>. Desejo <em>sem depender de promoções</em>.</p>
+ <p class="intro rv" style="margin-top:26px;color:rgba(248,243,236,.75)">Sua formatura é uma conquista única. A escolha do seu vestido também merece ser especial.</p>
 </div></section>`;
 
 PANELS.stories = ch('08','08 · Stories','Rotina diária <em>de Stories</em>','Stories não precisam de produção. Eles mantêm a audiência quente, alimentam o fundo de funil e geram conversas no WhatsApp. A meta é uma sequência de 6 a 10 stories por dia, distribuídos ao longo do dia.',10,'Sequência pronta') + `
